@@ -12,8 +12,8 @@ permalink: /categories2/DFS_BFS/
 toc: true
 toc_sticky: true
 
-date: 2022-07-24
-last_modified_at: 2022-07-24
+date: 2022-12-31
+last_modified_at: 2022-12-31
 ---
 
 ## 🦥 DFS와 BFS란?
