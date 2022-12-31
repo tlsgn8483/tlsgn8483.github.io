@@ -28,7 +28,7 @@ last_modified_at: 2022-12-31
 
 트리를 통해 알아보자
 
-BFS
+## BFS
 BFS Breadth First Search로 너비를 우선적으로 탐색
 
 root가 11인 트리는 연결된 자식 노드인 6과 16을 먼저 탐색 (11->6-16)
@@ -108,14 +108,14 @@ def dfs(root):
 
 BFS는 O(b^d)시간과 O(b^d)공간을 사용
 
-일반적인 사용
-Find Shortest path — BFS
-Test graph bipartiteness — BFS
-Find all Connected components — BFS
-Find articulation point — DFS
-Decision-making tree — DFS
-search space whole graph — DFS
-Finite children and infinite depth — BFS
-The finite depth and infinite children — DFS
-Dense graphs — DFS
-Sparse graphs — BFS
+## 일반적인 사용
+- Find Shortest path — BFS
+- Test graph bipartiteness — BFS
+- Find all Connected components — BFS
+- Find articulation point — DFS
+- Decision-making tree — DFS
+- search space whole graph — DFS
+- Finite children and infinite depth — BFS
+- The finite depth and infinite children — DFS
+- Dense graphs — DFS
+- Sparse graphs — BFS
