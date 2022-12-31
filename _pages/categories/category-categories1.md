@@ -1,5 +1,5 @@
 ---
-title: "끄적끄적"
+title: "My Diary"
 layout: category
 permalink: /categories/categories1/
 author_profile: true
