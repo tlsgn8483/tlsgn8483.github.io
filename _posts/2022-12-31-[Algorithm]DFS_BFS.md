@@ -109,13 +109,13 @@ def dfs(root):
 BFS는 O(b^d)시간과 O(b^d)공간을 사용
 
 ## 일반적인 사용
-Find Shortest path (BFS)
-Test graph bipartiteness (BFS)
-Find all Connected components (BFS)
-Find articulation point (DFS)
-Decision-making tree (DFS)
-search space whole graph (DFS)
-Finite children and infinite depth (BFS)
-The finite depth and infinite children (DFS)
-Dense graphs (DFS)
-Sparse graphs (BFS)
+- Find Shortest path (BFS)
+- Test graph bipartiteness (BFS)
+- Find all Connected components (BFS)
+- Find articulation point (DFS)
+- Decision-making tree (DFS)
+- search space whole graph (DFS)
+- Finite children and infinite depth (BFS)
+- The finite depth and infinite children (DFS)
+- Dense graphs (DFS)
+- Sparse graphs (BFS)
