@@ -1,0 +1,187 @@
+---
+title: "[HTTP] HTTP 웹 기본지식"
+excerpt: "HTTP 웹 기본지식"
+
+categories:
+  - Categories4
+tags:
+  - [tag1, tag2]
+
+permalink: /categories4/http_basic_1/
+
+toc: true
+toc_sticky: true
+
+date: 2022-07-24
+last_modified_at: 2023-01-02
+---
+
+![](https://velog.velcdn.com/images/tlsgn8483/post/0a9d08fa-31b4-48b5-8d6b-5a21d06c570f/image.png)
+IP 인터넷 프로토콜 역할
+- 지정한 IP 주소로 데이터를 전달
+- 패킷이라는 통신단위로 데이터 전달
+
+![](https://velog.velcdn.com/images/tlsgn8483/post/652c9391-5691-4708-9dfc-f1ac0cde6a7c/image.png)
+
+![](https://velog.velcdn.com/images/tlsgn8483/post/ea8e0252-954c-4e90-bdd8-9fed7d57d6b0/image.png)
+
+![](https://velog.velcdn.com/images/tlsgn8483/post/8679c651-e565-4356-9ca4-0e301f819a3d/image.png)
+
+### IP 프로토콜 한계
+
+- 비연결성
+  - 패킷을 받을 대상이 없거나 서비스 불능 상태여도 패킷 전송
+- 비신뢰성
+  - 중간에 패킷이 사라지거나, 패킷이 순서대로 오지 않는 경우에도 패킷 전송
+- 프로그램 구분
+  - 같은 IP를 사용하는 서버에서 통신하는 어플리케이션이 하나 이상일 수 있음 
+
+### 인터넷 프로토콜 스택 4가지 계층
+- 어플리케이션 계층 (HTTP, FTP)
+- 전송 계층 (TCP, UDP)
+- 인터넷 계층 (IP)
+- 네트워크 인터페이스 계층
+![](https://velog.velcdn.com/images/tlsgn8483/post/d99089e5-573f-4da6-abde-27e9d0e51f5e/image.png)
+
+### 프로토콜 계층
+![](https://velog.velcdn.com/images/tlsgn8483/post/51bcd021-d4c2-4c4b-b515-e4b601580cb9/image.png)
+
+TCP/IP 패킷 정보
+![](https://velog.velcdn.com/images/tlsgn8483/post/ad8140ad-b027-417a-acce-60f6358440f1/image.png)
+
+TCP 특징
+- 전송 제어 프로토콜(Transmission Control Protocol)
+- 연결지향 - TCP 3 way handshake (가상연결)
+- 데이터 전달보증
+- 순서보장
+- 신뢰할 수 있는 프로토콜
+- 현재는 대부분 TCP 사용
+![](https://velog.velcdn.com/images/tlsgn8483/post/de40260c-938c-4d7b-8e13-68e34cdd0c39/image.png)
+
+UDP 특징
+- 사용자 데이터그램 프로토콜(User Datagram Protocol)
+- 연결지향 (3 wayhandshake X)
+- 데이터 전달 보증 X
+- 순서보장 X
+- 데이터 전달 및 순서가 보장되지 않지만, 단순하고 빠름.
+- IP와 거의 같다 + Port, + checksum
+- 추가 작업 필요
+
+### Port IP 대역대에서 프로세스 구분
+- 0 ~ 65535 할당 가능
+- 0 ~ 1023 : 대부분 고정 값이 있는 포트 (사용 비추천)
+- FTP : 20, 21, Telnet : 23, Http : 80 , Https : 443
+![](https://velog.velcdn.com/images/tlsgn8483/post/652df466-ee85-4e5c-a480-c8b56324e053/image.png)
+
+### DNS
+도메인 네임 시스템(Domain Name System)
+![](https://velog.velcdn.com/images/tlsgn8483/post/94ea7bb5-3df2-40b4-b324-2bd46416c39f/image.png)
+
+
+
+### 클라이언트 서버구조
+- Request Response 구조
+- 클라이언트는 서버에 요청을 보내고, 응답을 대기
+- 서버가 요청에 대한 결과를 만들어서 응답
+![](https://velog.velcdn.com/images/tlsgn8483/post/b8b5b5ae-a6d9-4ac1-8cc2-de87cc3cbdb4/image.png)
+
+무상태 프로토콜(Stateless)
+- 서버가 클라이언트 상태저장 X
+- 장점으로는 서버 확장성이 높고, 단점으로는 클라이언트가 추가 데이터 전송필요 
+
+Stateful vs Stateless 차이
+- 상태유지 : 중간에 상태가 바뀌면 안된다.
+- 무상태 : 중간에 상태가 바뀌어도 됌
+	무상태는 응답 서버를 쉽게 바꿀 수 있음
+    실무 한계 : 모든 것을 무상태로 설계 할 수 있는 경우도 있고, 없는 경우도 있음
+    
+### HTTP 메세지
+- HTML, TEXT, IMAGE, 음성, 영상, 파일 JSON 등 모든 형태 데이터 전송 가능
+- 서버간에 데이터를 주고 받을 때도 대부분 HTTP사용
+![](https://velog.velcdn.com/images/tlsgn8483/post/3ff8815d-5766-48a5-9a6a-be9471df38f6/image.png)
+
+API URI 설계 방법
+
+가능한한 리소스만 사용해서 PATH를 작성한다.
+예) /members/find -> /members
+계층 구조상 상위를 컬렉션으로 보고 복수단어를 사용한다.
+예) /member -> /members
+
+### HTTP 메서드 종류
+
+- GET : 리소스 조회
+- POST : 요청 데이터 처리, 주로 등록에 사용
+- PUT : 리소스를 대체, 해당 리소스가 없다면 생성
+- PATCH : 리소스 부분 변경
+- DELETE : 리소스 삭제
+
+GET
+- 리소스 조회
+- 서버에 전달하고 싶은 데이터는 쿼리를 통해 전달
+
+POST
+- 요청 데이터 처리
+- 메세지 바디를 통해 서버로 요청 데이터 전달
+- 서버는 요청 데이터 처리
+- 메세지 바디로 통해 들어온 데이터를 처리하는 모든 기능을 수행
+- 주로 전달된 데이터로 신규 리소스 등록, 프로세스 처리에 사용
+
+PUT
+- 리소스를 대체(덮어쓰기)
+
+PATCH
+- 리소스 부분 변경
+
+DELETE
+- 리소스 제거 
+
+### 메서드의 속성
+- 안전(Safe Methods)
+- 멱등(Idempotent Methods)
+- 캐시가능(Cacheable Methods)
+
+안전
+- 호출해도 리소스를 변경하지 않는다.(해당 리소스만 고려)
+
+멱등
+- 한번 호출 또는 여러번 호출에도 결과가 같다.
+
+멱등 메서드
+- GET : 한번 조회하든 두번 조회하든 같은 결과 조회
+- PUT : 결과를 대체, 같은 요청을 여러번 하더라도 최종 결과 같음 
+- DELETE : 결과를 삭제, 같은 요청 여러번 하더라도 최종 결과 같음
+- POST : 멱등 X, 같은 결과가 아님. 
+
+캐시가능
+- 응답결과 리소스를 캐시해서 사용해도되는지
+- GET, HEAD, POST, PATCH 캐시가능
+
+
+### 클라이언트에서 서버로 데이터전송
+- 정적 데이터 조회(이미지, 정적 텍스트)
+- 동적 데이터 조회(주로 검색, 검색어)
+- HTML Form을 통한 데이터 전송(회원가입, 상품주문)
+- HTTP API를 통한 데이터 전송(회원가입, 상품주문, 서버 to 서버 ..)
+
+- HTML Form submit시 POST 전송 
+- Content-type: application/x-www-form-urlencoded 사용
+  - formd의 내용을 메세지 바디를 통해 전송
+  - 전송 데이터를 url encoding 처리 (abc김 -> abc%EA%..)
+- Content-Type : multipart/form-data
+  - 파일 업로드 같은 바이너리 데이터 전송시 사용
+  - 다른 종류의 여러 파일과 폼의 내용 함께 전송가능 
+- HTML Form 전송은 GET, POST만 지원
+
+### HTTP API 데이터전송
+- 서버 to 서버(백엔드 시스템 통신)
+- 앱 클라이언트(아이폰, 안드로이드)
+- 웹 클라이언트
+  - HTML에서 FORM 전송 대신 자바 스크립트를 통한 통신에 사용(AJAX)
+  - React, VueJS 같은 웹 클라이언트와 API 통신
+- POST, PUT, PATCH 메세지 바디를 통해 데이터 전송
+- GET 조회, 쿼리 파라미터로 전달
+- Content-Type : application/json을 주로 사용(Text,XML,JSON)
+
+
+
+참조 : https://www.inflearn.com/course/http-%EC%9B%B9-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC
