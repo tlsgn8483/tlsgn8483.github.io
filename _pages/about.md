@@ -12,7 +12,7 @@
 
 Email. tlsgn511**@**icloud.com
 
-Phone. 010-4128-8483
+Phone. ***-****-****
 
 ### Channel.
 
