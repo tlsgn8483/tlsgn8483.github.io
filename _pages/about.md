@@ -1,3 +1,9 @@
+---
+title: "Hi all! I'm Tommy👋🏻"
+permalink: /about/
+layout: single
+comments: false
+---
 # 이신후 | 꾸준히 성장하는 개발자
 
 <aside>
@@ -136,13 +142,6 @@ TCW Maker 는 자동화 장비(Pre-NATII) 사용자의 편의성을 위해 PCR �
 - 충북대병원 진료, 간호분야 프로그램 오픈전 QA 및 에러핸들링
 - MVVM, MVC 패턴을 통한 개발
 - FrontEnd : WPF , Backend : C#, DB: Oracle
-
----
-title: "Hi all! I'm Tommy👋🏻"
-permalink: /about/
-layout: single
-comments: false
----
 
 **충북대병원 정보시스템 차세대 SM 프로젝트**
 
