@@ -100,8 +100,6 @@ VUNO Med-DeepCARS Project
 
 장비 품질관리팀의 모든 문서&업무 전산화 프로그램
 
-![Untitled 1](https://user-images.githubusercontent.com/61337570/211134869-f543d225-7ba4-46b6-bfca-164069312125.png)
-
 - 초기 설계부터 개발까지 개발팀 프로젝트 리드
 - FullStack : Django Framework, 배포 : Docker, 웹 서버: Nginx
 - 서비스 외주비(2억 예상), 서버비용(Cloud) 대폭 절감 및 추후 운영보수비 감소
