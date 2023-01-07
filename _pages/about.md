@@ -5,7 +5,6 @@
 
 </aside>
 
-![git_image 중간.png]
 ![Profile](https://user-images.githubusercontent.com/61337570/211134806-34013a5b-6a19-4c3d-9ea3-16518bef85b5.png)
 
 
