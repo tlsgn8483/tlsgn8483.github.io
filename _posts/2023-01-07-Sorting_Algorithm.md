@@ -161,7 +161,7 @@ void mergeSort(int* a_pAry, int a_nFIndex, int a_nLIndex) {
 ```
 
 ## 힙 정렬 (Heap Sort)
-저번 포스팅에서 다룬 Binary Heap 자료구조를 활용한 Sorting이다. n개의 원소로 구성된 배열을 heapify하여 정렬을 하게 된다. Heap 자료구조에 저장하는 시간 복잡도는 O(logn)이며, n개에 대해서 정렬을 하면 O(logn)의 시간 복잡도를 갖게 된다.
+Binary Heap 자료구조를 활용한 Sorting이다. n개의 원소로 구성된 배열을 heapify하여 정렬을 하게 된다. Heap 자료구조에 저장하는 시간 복잡도는 O(logn)이며, n개에 대해서 정렬을 하면 O(logn)의 시간 복잡도를 갖게 된다.
 
 ```
 |공간 복잡도	|시간 복잡도
