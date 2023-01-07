@@ -1,6 +1,6 @@
 ---
 title: "Hi all! I'm Tommy👋🏻"
-permalink: /about/
+permalink: /about_1/
 layout: single
 comments: false
 ---
