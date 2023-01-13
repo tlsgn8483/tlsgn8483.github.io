@@ -78,4 +78,4 @@ last_modified_at: 2023-01-09
 - 다형성이 가장 중요
 - 스프링은 다형성을 극대화해서 이용할 수 있도록 도와줌.
 - 스프링에서 이야기하는 제어의 역전, 의존관계 주임은 다형성을 활용해서 역활과 구현을 편리하게 다룰 수 있도록 지원한다.
-참조 : https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8
+참조 : [Spring 핵심원리](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8)
