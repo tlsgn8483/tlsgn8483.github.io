@@ -1,5 +1,5 @@
 ---
-title: "[Spring Framework] 비즈니스 요구사항과 설계"
+title: "[Spring Framework] 비즈니스 요구사항과 설계1"
 excerpt: "회원, 주문과 할인정첵 설계"
 
 categories:
