@@ -93,15 +93,15 @@ analytics:
   provider: "google-gtag"
   # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id: "your tracking id here"
-    anonymize_ip: # true, false (default)
+    tracking_id: "349550477"
+    anonymize_ip: true # true, false (default)
 
 # Site Author
 author:
   name: "tommy Note" # 블로그 닉네임
   avatar: "/assets/images/tommy.png" # 블로그 프로필 사진
-#     bio              : "Love ya!!"
-#   location         : "Seoul, Korea"
+     bio              : "Love your self"
+   location         : "Seoul, Korea"
   # email            : "youremailhere@xxxxxx.com"
 
   links: # 사이트 링크
