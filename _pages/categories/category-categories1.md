@@ -3,7 +3,7 @@ title: "Diary"
 layout: category
 permalink: /categories/categories1/
 author_profile: true
-taxonomy: Categories1
+taxonomy: Diary
 sidebar:
-  nav: "categories"
+  nav: "Diary"
 ---
