@@ -42,7 +42,7 @@ last_modified_at: 2023-01-17
 - 편리한 리소스 조회
   - 파일, 클래스패스, 외부 등에서 리소스를 편리하게 조회
   
- ## 정리
+## 정리
  - ApplicationContext는 BeanFactory의 기능을 상속받는다.
  - ApplicationContext는 빈 관리기능 + 편리한 부가 기능을 제공한다.
  - BeanFactory를 직접 사용할 일은 거의 없다. 부가기능이 포함된 ApplicationContext를 사용한다.
