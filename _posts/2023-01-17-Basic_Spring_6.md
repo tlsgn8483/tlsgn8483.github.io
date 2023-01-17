@@ -7,7 +7,7 @@ categories:
 tags:
   - [tag1, tag2]
 
-permalink: /categories6/Basic_Spring_7/
+permalink: /categories6/Basic_Spring_6/
 
 toc: true
 toc_sticky: true
