@@ -1,6 +1,6 @@
 ---
 title: "[Spring Framework] Singleton Pattern & Singleton Container"
-excerpt: "BeanFactory와 ApplicationContext"
+excerpt: "Singleton Pattern & Singleton Container"
 
 categories:
   - Categories6
