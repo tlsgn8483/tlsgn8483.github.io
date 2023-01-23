@@ -6,4 +6,5 @@ author_profile: true
 taxonomy: categories1
 sidebar:
   nav: "categories1"
+  
 ---
