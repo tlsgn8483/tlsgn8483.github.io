@@ -1,5 +1,5 @@
 ---
-title: "[Algorithm] 기초자료구조 정리"
+title: "[Data_Structer] 기초자료구조 정리"
 excerpt: "기초 자료구조 정리"
 
 categories:
