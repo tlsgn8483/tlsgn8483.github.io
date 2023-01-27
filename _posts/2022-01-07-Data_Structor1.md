@@ -3,17 +3,17 @@ title: "[Algorithm] 기초자료구조 정리"
 excerpt: "기초 자료구조 정리"
 
 categories:
-  - Categories2
+  - Data_Structer
 tags:
   - [tag1, tag2]
 
-permalink: /categories2/Data_Structor1/
+permalink: /Data_Structer/Data_Structor1/
 
 toc: true
 toc_sticky: true
 
 date: 2023-01-07
-last_modified_at: 2023-01-07
+last_modified_at: 2023-01-27
 ---
 
 ![Alt Text](https://tenor.com/ko/view/prawin007kumar-gif-18351810.gif)
