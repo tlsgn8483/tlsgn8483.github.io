@@ -24,7 +24,7 @@ last_modified_at: 2023-01-28
 ### Queue
 
 >queue는 선입선출 FIFO(First In First Out)의 자료구조 
-시간복잡도는 enqueue $O(1)$ , dequeue $O(1)$  
+시간복잡도는 enqueue O(1) , dequeue O(1) 
 
 활용 예시는 `Cache구현`, `프로세스 관리`, `너비우선탐색(BFS)`
 
@@ -69,7 +69,7 @@ enqueue의 경우 queue의 맨 뒤에 데이터를 추가하면 완료되기 때
 ### Stack
 
  >stack은 후입선출 LIFO(Last In First Out)의 자료구조. 
- 시간복잡도는 push $O(1)$ , pop $O(1)$  
+ 시간복잡도는 push O(1) , pop O(1)  
  
  활용 예시는 `후위 표기법 연산`, `괄호 유효성 검사`, `웹 브라우저 방문기록(뒤로 가기)`, `깊이우선탐색(DFS)`
 
@@ -192,14 +192,14 @@ class Stack(object):
 >Queue 자료구조는 시간 순서상 먼저 집어 넣은 데이터가 먼저 나오는 **선입선출 FIFO(First In First Out)** 구조로 저장하는 형식. 
 이와 다르게 우선순위큐(priority queue)는 들어간 순서에 상관없이 우선순위가 높은 데이터가 먼저 추출된다. 
 
-Queue의 operation 시간복잡도는 `enqueue` $O(1)$, `dequeue` $O(1)$이고, 
+Queue의 operation 시간복잡도는 `enqueue` O(1), `dequeue` O(1)이고, 
 
-Priority queue는 `push` $O(logn)$ , `pop` $O(logn)$
+Priority queue는 `push` O(logn) , `pop` O(logn)
 
 **[** 🍯 **TIP]**
 💡 우선순위큐를 잘 답하기 위해서는 구현 방법과 operation의 시간복잡도를 잘 설명할 수 있어야 한다.
 
-우선순위큐를 구현하라고 하면 Heap을 구현. Heap 자료구조는 이진완전트리를 활용하는 것이고,대표적인 operation의 시간복잡도는  `push` $O(logn)$ , `pop` $O(logn)$
+우선순위큐를 구현하라고 하면 Heap을 구현. Heap 자료구조는 이진완전트리를 활용하는 것이고,대표적인 operation의 시간복잡도는  `push` O(logn) , `pop` O(logn)
 
 또한 tree가 그려져 있는 상태에서 최대힙, 최소힙의 삽입과 삭제시에 어떻게 node가 삭제되고 연결이 변경되는지의 과정을 그려서 설명가능해야 함. 
 
@@ -235,16 +235,16 @@ Heap은 완전이진트리 구조입니다. Heap이 되기 위한 조건은 다�
 ![](https://velog.velcdn.com/images/tlsgn8483/post/af21d292-e991-4b9f-aef7-93132f3f130c/image.png)
 
 
-### Heap push -  $O(logn)$
+### Heap push -  O(logn)
 
-heap tree의 높이는 $logN$
+heap tree의 높이는 logN
 
-`push()` 를 했을 때, swap하는 과정이 최대  $logN$번 반복되기 때문에 시간복잡도는  $O(logn)$
+`push()` 를 했을 때, swap하는 과정이 최대  $logN$번 반복되기 때문에 시간복잡도는  O(logn)
 
 
 ### Heap pop - $O(logn)$
 
-`pop()`을 했을 때, swap하는 과정이 최대  $logN$번 반복되기 때문에 시간복잡도는  $O(logn)$
+`pop()`을 했을 때, swap하는 과정이 최대  $logN$번 반복되기 때문에 시간복잡도는  O(logn)
 
 - 각 node에 저장된 값은 child node들에 저장된 값보다 크거나 같다(max heap)
     
@@ -265,7 +265,7 @@ heap tree의 높이는 $logN$
 
 어느 node를 선택하든 해당 node의 left subtree에는 그 node의 값보다 작은 값들을 지닌 node들로만 이루어져 있고, node의 right subtree에는 그 node의 값보다 큰 값들을 지닌 node들로만 이루어져 있는 binary tree
 
-검색과 저장, 삭제의 시간복잡도는 모두 $O(logn)$이고, worst case는 한쪽으로 치우친 tree가 됐을 때 $O(n)$
+검색과 저장, 삭제의 시간복잡도는 모두 O(logn)이고, worst case는 한쪽으로 치우친 tree가 됐을 때 $O(n)$
 
 **[** 🍯 **TIP]**
 
@@ -289,7 +289,7 @@ heap tree의 높이는 $logN$
 
 ![image](https://user-images.githubusercontent.com/61337570/215256929-f24a9380-3204-4747-8d9c-e5d5c72a5ddb.png)
 
-### `search`  $O(logn)$
+### `search`  O(logn)
 
 ![](https://velog.velcdn.com/images/tlsgn8483/post/b4d943bc-8d5d-423e-a44e-22fa0a84183a/image.png)
 
@@ -303,7 +303,7 @@ heap tree의 높이는 $logN$
 ### ⭐⭐ Hash table
 
 >hash table은 효율적인 탐색(빠른 탐색)을 위한 자료구조로써 key-value쌍의 데이터를 입력는다. 
-hash function $h$에 key값을 입력으로 넣어 얻은 해시값 $h(k)$를 위치로 지정하여 key- value 데이터 쌍을 저장. 저장, 삭제, 검색의 시간복잡도는 모두 $O(1)$
+hash function $h$에 key값을 입력으로 넣어 얻은 해시값 h(k)를 위치로 지정하여 key- value 데이터 쌍을 저장. 저장, 삭제, 검색의 시간복잡도는 모두 $O(1)$
 
 **[** 🍯 **TIP]**
 
@@ -361,9 +361,9 @@ key: ID, value: 이름
  (key, value) 데이터 쌍을 저장하기 위한 방법.
  
  
- hash table은 hash function $h$를 이용해서 ($key$, $value$)를 index: $h(k)$에 저장. 
+ hash table은 hash function h를 이용해서 (key, value)를 index: h(k)에 저장. 
  
- 이 때, “키 $k$값을 갖는 원소가 위치 $h(k)$에 hash된다.” 또는 “$h(k)$는 키 $k$의 해시값이다”라고 표현. key는 무조건 존재해야 하며, 중복되는 key가 있어서는 안된다.
+ 이 때, “키 k값을 갖는 원소가 위치 h(k)에 hash된다.” 또는 “h(k)는 키 k의 해시값이다”라고 표현. key는 무조건 존재해야 하며, 중복되는 key가 있어서는 안된다.
 
  한편, hash table을 구성하고 있는, (key, value)데이터를 저장할 수 있는 각각의 공간을 slot 또는 bucket이라 한다.
 
@@ -385,7 +385,7 @@ collision이란 서로 다른 key의 해시값이 똑같을 때를 말한다.
 
 ### 시간복잡도와 공간효율
 
-**시간복잡도**는 저장, 삭제, 검색 모두 기본적으로 $O(1)$이지만, collision으로 인하여 최악의 경우  $O(n)$이 될 수 있다. 
+**시간복잡도**는 저장, 삭제, 검색 모두 기본적으로 $O(1)$이지만, collision으로 인하여 최악의 경우  O(n)이 될 수 있다. 
 
 **공간효율성**은 떨어진다. 데이터가 저장되기 전에 미리 저장공간(slot, bucket)을 확보해야 하기 때문. 
 
@@ -411,7 +411,7 @@ collision이 발생할 경우 대표적으로 2가지 방법으로 해결
 
 또한 seperate chaining의 경우 worst case의 시간복잡도에 대해서 설명할 줄 알아야 한다. 
 
-삽입과 검색, 삭제의 시간복잡도는 $O(1)$이지만, worst case의 경우에 $O(n)$가 될 수 있다.
+삽입과 검색, 삭제의 시간복잡도는 O(1)이지만, worst case의 경우에 O(n)가 될 수 있다.
 
 
 ### Open addressing
@@ -443,18 +443,18 @@ linear probing이나 quadratic probing을 통해 탐사할 때는 탐사이동�
 
 Separate chaining 방식은 linked list(또는 Tree)를 이용하여 collision을 해결합니다. 충돌이 발생하면 linked list에 노드(slot)를 추가하여 데이터를 저장
 
-- 삽입: 서로 다른 두 key가 같은 해시값을 갖게 되면 linked list에 node를 추가하여 (key, value) 데이터 쌍을 저장. 삽입의 시간복잡도는 $O(1)$
+- 삽입: 서로 다른 두 key가 같은 해시값을 갖게 되면 linked list에 node를 추가하여 (key, value) 데이터 쌍을 저장. 삽입의 시간복잡도는 O(1)
 - 검색: 기본적으로  $O(1)$의 시간복잡도 이지만 **최악의 경우** $O(n)$의 시간복잡도를 갖는다.
 - 삭제:  삭제를 하기 위해선 검색을 먼저 해야하므로 검색의 시간복잡도와 동일
 
 기본적으로 $O(1)$이지만 **최악의 경우** $O(n)$의 시간복잡도 가진다.
 
- worst case의 경우 n개의 모든 key가 동일한 해시값을 갖게 되면 길이 n의 linked list가 생성되게 된다. 이 때, 검색의 시간복잡도가 $O(n)$
+ worst case의 경우 n개의 모든 key가 동일한 해시값을 갖게 되면 길이 n의 linked list가 생성되게 된다. 이 때, 검색의 시간복잡도가 O(n)
 
 ![](https://velog.velcdn.com/images/tlsgn8483/post/6028def7-2352-4eea-8df7-d2cafae14968/image.png)
 
 참고: seperate chaining은 기본적으로 linked list를 이용하여  데이터를 저장하지만, collision이 많이 발생하여 linked list의 길이가 길어지면 Binary Search Tree(BST)자료구조를 이용하여 데이터를 저장하기도 함. 
 
-BST를 사용함으로써 검색의 worst case 시간복잡도를 $O(n)$ 에서 $O(logn)$으로 낮출 수 있다.
+BST를 사용함으로써 검색의 worst case 시간복잡도를 O(n) 에서 O(logn)으로 낮출 수 있다.
 
 참조 : [개발남노씨 자료구조](https://www.nossi.dev/interview/cs/dsa)
