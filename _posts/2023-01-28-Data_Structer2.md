@@ -37,18 +37,18 @@ Array의 장점은 lookup과 append가 빠르다. 따라서 조회를 자주 해
 
 Array의 단점은 fixed-size 특성상 선언시에 Array의 크기를 미리 정해야 된다. 
 
-이는 메모리 낭비나 추가적인 overhead가 발생할 수 있습니다.
+이는 메모리 낭비나 추가적인 overhead가 발생할 수 있다.
 
 ### 시간복잡도
 
 |  | Array |
 | --- | --- |
-| access | $O(1)$ |
-| append | $O(1)$ |
-| 마지막 원소delete | $O(1)$ |
-| insertion | $O(n)$ |
-| deletion | $O(n)$ |
-| search | $O(n)$ |
+| access | O(1) |
+| append | O(1) |
+| 마지막 원소delete | O(1) |
+| insertion | O(n) |
+| deletion | O(n) |
+| search | O(n) |
 
 
 ### Q. Dynamic Array
@@ -76,7 +76,7 @@ Array의 단점은 fixed-size 특성상 선언시에 Array의 크기를 미리 �
 
 ### Doubling
 
-> 데이터를 추가(append $O(1)$) 하다가 메모리를 초과하게 되면 기존 배열의size보다 두배 큰 배열을 선언하고 데이터를 일일이 옮기는(n개의 데이터를 일일이 옮겨야 하므로 $O(n)$ ) 방법
+> 데이터를 추가(append O(1)) 하다가 메모리를 초과하게 되면 기존 배열의size보다 두배 큰 배열을 선언하고 데이터를 일일이 옮기는(n개의 데이터를 일일이 옮겨야 하므로 O(n)) 방법
 
 ![](https://velog.velcdn.com/images/tlsgn8483/post/caef766c-90c7-4ff1-9f64-06ede9b15272/image.png)
 
@@ -85,9 +85,9 @@ Array의 단점은 fixed-size 특성상 선언시에 Array의 크기를 미리 �
 
 >Dynamic array에 데이터를 추가할 때마다 $O(1)$의 시간이 걸리게 된다. → 추가를 하다가 미리 선언된 size를 넘어서는 순간에, resize → 이 때는 일일이 데이터를 모두 옮겨야 되기 때문에 이 때만큼은$O(n)$의 시간복잡도 
 
-append의 총 과정을 살펴보면 데이터를 마지막 인덱스에 추가하는($O(1)$)작업이 대다수이고, size를 넘어설 때는 size를 두 배 늘리고 데이터를 일일이 옮기는 과정 (resize $O(n)$)이 아주 가끔 발생
+append의 총 과정을 살펴보면 데이터를 마지막 인덱스에 추가하는(O(1))작업이 대다수이고, size를 넘어설 때는 size를 두 배 늘리고 데이터를 일일이 옮기는 과정 (resize O(n))이 아주 가끔 발생
 
-append의 전체적인 시간복잡도는 $O(1)$
+append의 전체적인 시간복잡도는 O(1)
 
 
 ### Linked List
@@ -126,15 +126,16 @@ Array의 경우,  연속성을 유지하기 위해 물리적 메모리 상에서
 
 ### 시간복잡도
 
->Array의 경우 중간에 데이터를 삽입/삭제하게 되면 해당 인덱스의 뒤에 있는 모든 원소들은 shift -> $O(n)$의 시간복잡도
-Linked list를 물리적으로 옮길 필요없이 next address가 가리키는 주소값만 변경하면 되기 때문에 $O(1)$의 시간복잡도로 삽입/삭제가 가능
+>Array의 경우 중간에 데이터를 삽입/삭제하게 되면 해당 인덱스의 뒤에 있는 모든 원소들은 shift -> 
+O(n)의 시간복잡도
+Linked list를 물리적으로 옮길 필요없이 next address가 가리키는 주소값만 변경하면 되기 때문에 O(1)의 시간복잡도로 삽입/삭제가 가능
 
 |  | Linked list |
 | --- | --- |
-| access | $O(n)$ |
-| search | $O(n)$ |
-| insertion | $O(1)$ |
-| deletion | $O(1)$ |
+| access | O(n) |
+| search | O(n) |
+| insertion | O(1) |
+| deletion | (1) |
 
 ![image](https://user-images.githubusercontent.com/61337570/215256219-522a7610-1baa-4eba-803c-a1ae1edb6bed.png)
 
@@ -151,7 +152,7 @@ Linked List는 메모리상에서는 연속적이지 않지만, 각각의 원소
 
 각 operation의 시간복잡도가 다름. 
 
-데이터 조회는 Array의 경우 $O(1)$, Linked list는 $O(n)$의 시간복잡도 가지며, 삽입/삭제는 Array $O(n)$, Linked list $O(1)$의 시간복잡도를 가진다. 
+데이터 조회는 Array의 경우 O(1), Linked list는 O(n)의 시간복잡도 가지며, 삽입/삭제는 Array O(n), Linked list O(1)의 시간복잡도를 가진다. 
 
 **💡추천**
 
@@ -174,20 +175,20 @@ Array는 메모리상에서 연속적으로 데이터를 저장하고, Linked Li
 
 ### 조회 (lookup)
 
- >Array는 메모리상에서 연속적으로 데이터를 저장하였기 때문에 저장된 데이터에 즉시 접근(random access $O(1)$)할 수 있다. 
+ >Array는 메모리상에서 연속적으로 데이터를 저장하였기 때문에 저장된 데이터에 즉시 접근(random access O(1))할 수 있다. 
  이와 반면 Linked List는 메모리 상에서 불연속적으로 데이터를 저장하기 때문에 순차 접근(Sequential Access)만 가능. 
- 즉, 특정 index의 데이터를 조회하기 위해 $O(n)$의 시간복잡도
+ 즉, 특정 index의 데이터를 조회하기 위해 O(n)의 시간복잡도
 
 ### 삽입/삭제 (insert/delete)
 
- Array의 경우 맨 마지막 원소를 추가/삭제하면 시간복잡도가 $O(1)$
+ Array의 경우 맨 마지막 원소를 추가/삭제하면 시간복잡도가 O(1)
  
  하지만 맨 마지막 원소가 아닌 중간에 있는 원소를 삽입/삭제하면 해당 원소보다 큰 인덱스의 원소들을 한 칸씩 shift 해줘야 하는 비용(cost)이 발생
- 따라서, 이 경우에는 시간복잡도가 $O(n)$
+ 따라서, 이 경우에는 시간복잡도가 O(n)
 
- Linked List는 어느 원소를 추가/삭제 하더라도 node에서 다음주소를 가르키는 부분만 다른 주소 값으로 변경하면 되기 때문에 shift할 필요 없어 시간복잡도가 $O(1)$
+ Linked List는 어느 원소를 추가/삭제 하더라도 node에서 다음주소를 가르키는 부분만 다른 주소 값으로 변경하면 되기 때문에 shift할 필요 없어 시간복잡도가 O(1)
 
- 하지만 Linked list의 경우 추가/삭제를 하려는 index까지 도달하는데 $O(n)$의 시간이 걸리기 때문에, 실질적으로 Linked List도 추가/삭제 시에 $O(n)$의 시간복잡도 가진다. 
+ 하지만 Linked list의 경우 추가/삭제를 하려는 index까지 도달하는데 O(n)의 시간이 걸리기 때문에, 실질적으로 Linked List도 추가/삭제 시에 O(n)의 시간복잡도 가진다. 
 
 ### memory
 
