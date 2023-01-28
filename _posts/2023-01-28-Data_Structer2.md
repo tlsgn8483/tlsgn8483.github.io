@@ -136,9 +136,9 @@ Linked list를 물리적으로 옮길 필요없이 next address가 가리키는 
 | insertion | $O(1)$ |
 | deletion | $O(1)$ |
 
-![Linked List.003.jpeg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/315c83e5-7515-48bb-9e7f-4f6c3c239032/Linked_List.003.jpeg)
+![image](https://user-images.githubusercontent.com/61337570/215256219-522a7610-1baa-4eba-803c-a1ae1edb6bed.png)
 
-![Linked List.006.jpeg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/28ebad27-322c-4046-b096-6d130859934e/Linked_List.006.jpeg)
+![image](https://user-images.githubusercontent.com/61337570/215256238-201e61c3-d234-4eaa-8323-5371d772ffea.png)
 
 ---
 
