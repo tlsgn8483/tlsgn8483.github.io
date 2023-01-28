@@ -12,8 +12,8 @@ permalink: /Data_Structer/Data_Structor3/
 toc: true
 toc_sticky: true
 
-date: 2023-01-27
-last_modified_at: 2023-01-27
+date: 2023-01-28
+last_modified_at: 2023-01-28
 ---
 
 
