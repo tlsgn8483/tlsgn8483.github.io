@@ -65,7 +65,7 @@ last_modified_at: 2023-01-31
 
 ### ⭐⭐ Hash table
 
->hash table은 효율적인 탐색(빠른 탐색)을 위한 자료구조로써 key-value쌍의 데이터를 입력는다. 
+>hash table은 효율적인 탐색(빠른 탐색)을 위한 자료구조로써 key-value쌍의 데이터를 입력. 
 hash function $h$에 key값을 입력으로 넣어 얻은 해시값 h(k)를 위치로 지정하여 key- value 데이터 쌍을 저장. 저장, 삭제, 검색의 시간복잡도는 모두 $O(1)$
 
 **[** 🍯 **TIP]**
