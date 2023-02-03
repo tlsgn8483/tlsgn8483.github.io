@@ -1,5 +1,5 @@
 ---
-title: "[Data_Structer] 재귀함수(Recursice Function)"
+title: "[Coding_Test] 재귀함수(Recursice Function)"
 excerpt: "재귀함수(Recursice Function)"
 
 categories:
