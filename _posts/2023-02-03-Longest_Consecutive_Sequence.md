@@ -26,7 +26,7 @@ Q. 정렬되어 있지 않은 정수형 배열 nums가 주어졌다. nums 원소
 
 **제약조건**
 
-1. `0 <= nums.length <= 10^5``
+1. `0 <= nums.length <= 10^5`
 2. `-10^9 <= nums[i] <= 10^9` 
 
 ![](https://velog.velcdn.com/images/tlsgn8483/post/f7bbe9c0-1aa4-41c2-82ae-553b77f664f6/image.png)
