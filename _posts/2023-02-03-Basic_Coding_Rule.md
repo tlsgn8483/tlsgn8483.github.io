@@ -1,5 +1,5 @@
 ---
-title: "[Data_Structer] Basic_Coding_Rule"
+title: "[Coding_Test] Basic_Coding_Rule"
 excerpt: "Basic_Coding_Rule"
 
 categories:
