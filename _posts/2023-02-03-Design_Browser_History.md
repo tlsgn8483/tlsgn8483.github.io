@@ -26,11 +26,11 @@ Q. 인터넷 브라우저에서 방문기록과 동일한 작동을 하는 Brows
 - string forword(int steps)을 호출하면 "앞으로 가기"를 한다. "앞으로 가기"를 할 수 있는 page 개수가 x이고, step > x라면 x 번 만큼만 "앞으로 가기"를 한다. "앞으로 가기"가 완료되면 현재 url을 return한다.
 
 **제약조건**
-`1 <= homepage.length <=20`
-`1 <= url.length <= 20`
-`1 <= step <= 100`
-`hompage와 url은 '.'를 포함한 lower case 영문자로 되어있다.`
-`visit, back 그리고 forword는 최대 5000번의 호출이 있을 수 있다.
+1. `1 <= homepage.length <=20`
+2. `1 <= url.length <= 20`
+3. `1 <= step <= 100`
+4. `hompage와 url은 '.'를 포함한 lower case 영문자로 되어있다.`
+5. `visit, back 그리고 forword는 최대 5000번의 호출이 있을 수 있다.
 
 ![](https://velog.velcdn.com/images/tlsgn8483/post/8b981ed5-ad17-47f4-bc9e-dd66dac890a2/image.png)
 
