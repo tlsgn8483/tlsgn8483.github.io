@@ -27,7 +27,7 @@ last_modified_at: 2023-02-03
 ## 구성요소 2가지
 
 1. recurrence relation => `점화식`
-f(n)을 f(n-1),f(n-2), .. ,f(2),f(1)의 관계식으로 표현하는 것을 recurrence relation이락 말한다.
+f(n)을 f(n-1),f(n-2), .. ,f(2),f(1)의 관계식으로 표현하는 것을 recurrence relation이라 말한다.
 - Problem과 subproblem(s) 관계식을 말한다.
 
 ex) Factorial: f(n) = n * f(n-1)
