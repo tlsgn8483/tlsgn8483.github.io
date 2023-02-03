@@ -1,5 +1,5 @@
 ---
-title: "자료구조"
+title: "Coding_Test"
 layout: category
 permalink: /categories/Coding_Test/
 author_profile: true
