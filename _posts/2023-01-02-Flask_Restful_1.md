@@ -145,7 +145,8 @@ Rest API 요청시 파라미터/파라미터 값 넣기
     /login.html
 ```
 
-```html
+```
+html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -171,7 +172,7 @@ Flask로 정적 웹페이지 로드
 - flask render_template(HTML파일명): HTML 파일 전송하기
   - HTML파일은 flask 가 실행되는 하위 폴더인 templates 폴더 안에 위치해야 함
   
-  ```
+```
 @app.route('/html_test')
 def hello_html():
     # html file은 templates 폴더에 위치해야 함
@@ -181,6 +182,8 @@ def hello_html():
 ### login_test.py 파일 업데이트
 - flask 의 render_template 함수 추가
 - @app.route('html_test') 추가
+```
+
 ```
 from flask import Flask, jsonify, request, render_template
 app = Flask(__name__)
@@ -218,7 +221,8 @@ app = Flask(__name__, static_url_path='/static')
 ```
 
 - html 상의 경로 변경
-```html
+```
+html
 <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/" />
 <link href="/static/dist/css/bootstrap.min.css" rel="stylesheet" />
 ```
@@ -233,7 +237,8 @@ app = Flask(__name__, static_url_path='/static')
     - GET/PUT/DELETE 는 동일, POST 만 다름
 - API 리턴값은 flask 의 jsonify() 함수를 사용해서, JSON 형식으로 리턴값을 넣어서 보내면 됨
 
-```python
+```
+python
 @app.route("/test", methods=['GET', 'POST', 'PUT', 'DELETE'])
 def test():
     if request.method == 'POST':
@@ -262,7 +267,8 @@ def test():
 
 - vue template 에서 각 버튼 클릭시, 각 버튼에 연결된 함수를 호출하는 코드
 
-```html
+```
+html
     <button type="submit" class="btn btn-secondary" v-on:click="test_get">GET TEST</button>
     <button type="submit" class="btn btn-secondary" v-on:click="test_post">POST TEST</button>
     <button type="submit" class="btn btn-secondary" v-on:click="test_put">PUT TEST</button>
@@ -276,7 +282,8 @@ def test():
 
 - flask 의 jsonify() 함수를 사용해서, JSON 형식으로 리턴된 리턴값은 response.data 에 담겨져 있으므로, 해당 데이터를 JSON 데이터를 꺼내듯이 추출하면 됨
 
-```javascript
+```
+javascript
           test_get: () => {
             axios("http://localhost:5000/test", {
               method: "get",
