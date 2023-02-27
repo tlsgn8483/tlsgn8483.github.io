@@ -53,6 +53,7 @@ last_modified_at: 2023-02-27
 동시성 = 한개의 CPU core에서 mulit process가 작동되는 원리
 
 ## 동시성(Concurrency) vs 병렬성(Parallelism)
+
 | 동시성 | 병렬성 |
 | --- | --- |
 | Single core | Multi core |
