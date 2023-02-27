@@ -124,6 +124,27 @@ PCB는 아래와 같은 정보가 포함되어 있음
 - multi thread에서는 각각의 thread마다 PC register를 가지고 있어야 한다. 
 (한 process 내에서도 thread끼리 context switch가 일어나게 되는데, PC register에 code address가 저장되어 있어야 이어서 실행을 할 수 있기 때문)
 
+## ⭐⭐ multi process와 multi thread를 비교
+- multi thread는 multi process보다 적은 메모리 공간을 차지하고 `Context Switching`이 빠르다.
+- multi process는 multi thread보다 많은 메모리공간과 CPU 시간을 차지
+- multi thread는 동기화 문제와 하나의 thread 장애로 전체 thread가 종료될 위험
+- multi process는 하나의 process가 죽더라도 다른 process에 영향을 주지 않아 안정성이 높음
+
+>두 방법은 동시에 여러 작업을 수행한다는 측면에서 유사한 면이 있음.
+적용할 시스템에 따라 두 방법의 장단점을 고려하여 적합한 방식을 선택
+메모리 구분이 필요할때 = Multi Process가 유리
+Context swichin 빈번, 데이터 공유 빈번, 자원 효율적 활용일 경우 = Multi Thread
+
+### Multi process & Multi thread
+- multi process대신 multi thread로 구현할 경우, 메모리 공간과 시스템 자원 소모가 줄어든다.
+(하지만 멀티 스레드를 사용할 때에는, 스레드간 자원을 공유하기 때문에, 동기화 문제가 발생할 수 있기 때문에, 프로그램 설계가 필요)
+- 프로세스간 통신(IPC)보다 Thread간 통신 비용이 적기 때문에 오버헤드가 적음.
+
+|  | 메모리 사용 / CPU 시간 | Context switching | 안정성 |
+| --- | --- | --- | --- |
+| multi process | 많은 메모리 공간 / CPU 시간 차지 | 느림 | 높음 |
+| multi thread | 적은 메모리 공간 / CPU 시간 차지 | 빠름 | 낮음 |
+
 ![](https://velog.velcdn.com/images/tlsgn8483/post/db60934a-56cd-456d-b855-c4569d9d8888/image.png)
 
 
