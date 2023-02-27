@@ -147,5 +147,4 @@ Context swichin 빈번, 데이터 공유 빈번, 자원 효율적 활용일 경�
 
 ![](https://velog.velcdn.com/images/tlsgn8483/post/db60934a-56cd-456d-b855-c4569d9d8888/image.png)
 
-
 참조 : [개발남노씨 운영체제]([[https://www.nossi.dev/interview/cs/dsa](https://www.inflearn.com/course/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%9E%85%EB%AC%B8-%ED%8C%8C%EC%9D%B4%EC%8D%AC/dashboard)](https://www.nossi.dev/interview/cs/os))
