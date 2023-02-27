@@ -1,9 +1,9 @@
 ---
 title: "운영체제"
 layout: category
-permalink: /categories/Operating_System/
+permalink: /categories/operating_system/
 author_profile: true
-taxonomy: Operating_System
+taxonomy: operating_system
 sidebar:
   nav: "categories"
 ---
