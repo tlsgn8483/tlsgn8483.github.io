@@ -1,5 +1,5 @@
 ---
-title: "[Coding_Test] Process & Thread"
+title: "[operating_system] Process & Thread"
 excerpt: "프로세스와 쓰레드에 대한 설명"
 
 categories:
