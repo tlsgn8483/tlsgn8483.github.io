@@ -12,7 +12,7 @@ permalink: /operating_system/Process_Thread/
 toc: true
 toc_sticky: true
 
-date: 2023-0227
+date: 2023-02-27
 last_modified_at: 2023-02-27
 ---
 
