@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://tlsgn8483.github.io/sitemap.xml
