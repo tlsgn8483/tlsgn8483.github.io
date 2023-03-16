@@ -99,7 +99,7 @@ Deadlock
 
  SELECT ~WHERE query를 통해 특정 조건을 만족하는 데이터를 찾을 때, full table scan할 필요 없이 정렬되어 있는 index에서 훨씬 빠른 속도로 검색을 할 수 있게 된다.
  
- ### Index 구조
+### Index 구조
 
 - Index는 Btree, B+tree, Hash, Bitmap로 구현될 수 있습니다. 많은 데이터베이스 시스템에서 index는 B+tree구조. 
 - index를 생성하게 되면 특정 column(속성, attribute)의 값을 기준으로 **정렬**하여 데이터의 **물리적 위치**와 함께 별도 파일에 저장. 
@@ -109,12 +109,12 @@ Deadlock
  >정리해보면 특정 column을 search-key 값으로 설정하여 index를 생성하면, 해당 search-key 값을 기준으로 정렬하여 (search-key, pointer)를 별도 파일에 저장하고, 이를 index라고 한다.
  
  
- ### Index 사용하는 이유
+### Index 사용하는 이유
 
  Table에 데이터를 지속적으로 저장하게 되면 내부적으로 순서 없이 쌓이게 된다. 
  이 경우에 특정 조건을 만족하는 데이터를 찾고자 WHERE절을 사용한다. Table의 row(record)를 처음부터 끝까지 모두 접근하여 검색조건과 일치하는지 비교하는 과정이 필요한데, 이를 Full Table Scan이라고 한다. 하지만 특정 coloumn에 대한 Index를 생성해 놓은 경우 해당 속성에 대하여 search-key가 정렬되어 저장되어 있기 때문에 조건 검색(SELECT ~ WHERE) 속도가 굉장히 빠르다.
  
- ### 클러스터형 인덱스와 보조 인덱스(clustering index & secondary index)
+### 클러스터형 인덱스와 보조 인덱스(clustering index & secondary index)
 
 - clustering index: 특정 column을 기본키(primary key)로 지정하면 자동으로 클러스터형 인덱스가 생성되고, 해당 column 기준으로 정렬이 된다. Table 자체가 정렬된 하나의 index. 마치 영어사전처럼 책의 내용 자체가 정렬된 것을 떠올리면 쉽다.
 - secondary index : 일반 책의 찾아보기와 같이 별도의 공간에 인덱스가 생성된다. `create index`와 같이 index를 생성하기를 하거나 고유키(unique key)로 지정하면 보조 인덱스가 생성된다.
