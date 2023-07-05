@@ -7,7 +7,7 @@ categories:
 tags:
   - [tag1, tag2]
 
-permalink: /Data_Structer/Hash Table/
+permalink: /Data_Structer/Hash_Table/
 
 toc: true
 toc_sticky: true
