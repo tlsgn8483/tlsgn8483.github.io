@@ -7,13 +7,13 @@ categories:
 tags:
   - [tag1, tag2]
 
-permalink: /Data_Structer/Hash_Table/
+permalink: /Data_Structer/Data_Structer4/
 
 toc: true
 toc_sticky: true
 
 date: 2023-01-31
-last_modified_at: 2023-01-31
+last_modified_at: 2023-07-05
 ---
 
 ## Hash table & BST(Binary Search Tree)
