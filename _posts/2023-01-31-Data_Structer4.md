@@ -28,7 +28,7 @@ last_modified_at: 2023-01-31
 
 어느 node를 선택하든 해당 node의 left subtree에는 그 node의 값보다 작은 값들을 지닌 node들로만 이루어져 있고, node의 right subtree에는 그 node의 값보다 큰 값들을 지닌 node들로만 이루어져 있는 binary tree
 
-검색과 저장, 삭제의 시간복잡도는 모두 O(logn)이고, worst case는 한쪽으로 치우친 tree가 됐을 때 $O(n)$
+검색과 저장, 삭제의 시간복잡도는 모두 O(logn)이고, worst case는 한쪽으로 치우친 tree가 됐을 때 O(n)
 
 **[** 🍯 **TIP]**
 
@@ -66,7 +66,7 @@ last_modified_at: 2023-01-31
 ### ⭐⭐ Hash table
 
 >hash table은 효율적인 탐색(빠른 탐색)을 위한 자료구조로써 key-value쌍의 데이터를 입력. 
-hash function $h$에 key값을 입력으로 넣어 얻은 해시값 h(k)를 위치로 지정하여 key- value 데이터 쌍을 저장. 저장, 삭제, 검색의 시간복잡도는 모두 $O(1)$
+hash function $h$에 key값을 입력으로 넣어 얻은 해시값 h(k)를 위치로 지정하여 key- value 데이터 쌍을 저장. 저장, 삭제, 검색의 시간복잡도는 모두 O(1)
 
 **[** 🍯 **TIP]**
 
@@ -148,7 +148,7 @@ collision이란 서로 다른 key의 해시값이 똑같을 때를 말한다.
 
 ### 시간복잡도와 공간효율
 
-**시간복잡도**는 저장, 삭제, 검색 모두 기본적으로 $O(1)$이지만, collision으로 인하여 최악의 경우  O(n)이 될 수 있다. 
+**시간복잡도**는 저장, 삭제, 검색 모두 기본적으로 O(1)이지만, collision으로 인하여 최악의 경우  O(n)이 될 수 있다. 
 
 **공간효율성**은 떨어진다. 데이터가 저장되기 전에 미리 저장공간(slot, bucket)을 확보해야 하기 때문. 
 
@@ -185,9 +185,9 @@ collision이 발생할 경우 대표적으로 2가지 방법으로 해결
 
  open addressing은 빈 slot을 찾는 방법에 따라 크게 Linear Probing, Quadratic Probing, Double Hashing으로 나뉜다.
 
- Linear Probing(선형 조사법)& Quadratic Probing(이차 조사법) : 선형 조사법은 충돌이 발생한 해시값으로 부터 일정한 값만큼$(+1, +2, +3, ...)$ 건너 뛰어, 비어 있는 slot에 데이터를 저장한다. 
+ Linear Probing(선형 조사법)& Quadratic Probing(이차 조사법) : 선형 조사법은 충돌이 발생한 해시값으로 부터 일정한 값만큼(+1, +2, +3, ...) 건너 뛰어, 비어 있는 slot에 데이터를 저장한다. 
  
- 이차 조사법은 제곱수($+1^2, +2^2, +3^2, ...$)로 건너 뛰어, 비어 있는 slot을 찾는다.
+ 이차 조사법은 제곱수(+1^2, +2^2, +3^2, ...)로 건너 뛰어, 비어 있는 slot을 찾는다.
     
  충돌이 여러번 발생하면 여러번 건너 뛰어 빈 slot을 찾는다. 
  
@@ -207,10 +207,10 @@ linear probing이나 quadratic probing을 통해 탐사할 때는 탐사이동�
 Separate chaining 방식은 linked list(또는 Tree)를 이용하여 collision을 해결합니다. 충돌이 발생하면 linked list에 노드(slot)를 추가하여 데이터를 저장
 
 - 삽입: 서로 다른 두 key가 같은 해시값을 갖게 되면 linked list에 node를 추가하여 (key, value) 데이터 쌍을 저장. 삽입의 시간복잡도는 O(1)
-- 검색: 기본적으로  $O(1)$의 시간복잡도 이지만 **최악의 경우** $O(n)$의 시간복잡도를 갖는다.
+- 검색: 기본적으로  O(1)의 시간복잡도 이지만 **최악의 경우** O(n)의 시간복잡도를 갖는다.
 - 삭제:  삭제를 하기 위해선 검색을 먼저 해야하므로 검색의 시간복잡도와 동일
 
-기본적으로 $O(1)$이지만 **최악의 경우** $O(n)$의 시간복잡도 가진다.
+기본적으로 $O(1)$이지만 **최악의 경우** O(n)의 시간복잡도 가진다.
 
  worst case의 경우 n개의 모든 key가 동일한 해시값을 갖게 되면 길이 n의 linked list가 생성되게 된다. 이 때, 검색의 시간복잡도가 O(n)
 
