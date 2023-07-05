@@ -1,6 +1,6 @@
 ---
 title: "[Data_Structer] Hash Table"
-excerpt: "Hash Tab;e"
+excerpt: "Hash Table"
 
 categories:
   - Data_Structer
