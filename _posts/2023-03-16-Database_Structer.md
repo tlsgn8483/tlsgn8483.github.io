@@ -7,7 +7,7 @@ categories:
 tags:
   - [tag1, tag2]
 
-permalink: /Database/Database_structer/
+permalink: /Database/database_structer/
 
 toc: true
 toc_sticky: true
