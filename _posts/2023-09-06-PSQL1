@@ -1,6 +1,6 @@
 ---
-title: "[Database] 트랜잭션과 인덱스"
-excerpt: "트랜잭션과 인덱스"
+title: "[Database] 할 때마다 까먹어서 정리하는 PSQL 접속 방법"
+excerpt: "할 때마다 까먹어서 정리하는 PSQL 접속 방법"
 
 categories:
   - Database
