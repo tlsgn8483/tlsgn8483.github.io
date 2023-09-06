@@ -102,12 +102,10 @@ psql --help
 
 ***psql -U username databasename**
 
-사실 위의 명령도 풀어 쓰면 아래와 같습니다.
-
+사실 위의 명령도 풀어 쓰면 아래와 같다.
 
 
 ***psql --dbname=my_db_name --host=localhost --port=5432 --username=my_user_name --no-password**
-
 
 앞으로는 postgres 접속이 필요 할 때 시간 낭비를 더 이상 하지 않기 위해 정리 해보았다.
 
