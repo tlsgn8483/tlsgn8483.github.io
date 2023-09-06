@@ -7,7 +7,7 @@ categories:
 tags:
   - [tag1, tag2]
 
-permalink: /operating_system/Transaction_Index/
+permalink: /Database/Transaction_Index/
 
 toc: true
 toc_sticky: true
