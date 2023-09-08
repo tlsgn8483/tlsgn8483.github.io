@@ -19,9 +19,9 @@ main:
 # 2022.02.15 sidebar update : simple ver.
 categories:
   - title: "끄적끄적"
-    url: /categories/categories1/
+    url: /categories/Diary/
   - title: "Algorithm"
-    url: /categories/categories2/
+    url: /categories/Algorithm/
   - title: "Flask Framework"
     url: /categories/Flask/
   - title: "HTTP Network"
