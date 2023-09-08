@@ -53,9 +53,9 @@ CMD python /app/app.py
 이를 베이스 이미지라고도 한다.
 
 FROM 에서 베이스 이미지와 태그를 지정하면 registry 에서 해당 이미지를 땡겨오게(pull) 된다.
-
-**FROM ubuntu:18.04**
-
+```
+FROM ubuntu:18.04
+```
 위와 같은 line 이 실행되면 도커는 registry 에서 linux ubuntu 18.04 버전 이미지를 다운로드하여
 
 새로 만들 이미지의 기초가 되도록 구성한다.
@@ -217,7 +217,7 @@ multiple lines."
 
 이미지 내에 있는 label 데이터를 확인할 때는 다음과 같이 명령어를 입력한다.
 ```
- **$ docker image inspect --format='' myimage**
+ $ docker image inspect --format='' myimage
 ```
 
  
@@ -298,7 +298,7 @@ ADD 는 Host 내에 있는 파일 외에도
 
  
 ```
-**ADD http://example.com/foobar /toramko/**
+ADD http://example.com/foobar /toramko/
 ```
 
  
@@ -323,7 +323,7 @@ USER <UID>[:<GID>]
 
  
 ```
-**toram:toram**
+toram:toram
 ```
  
 
@@ -332,14 +332,14 @@ USER <UID>[:<GID>]
 
 작업 디렉토리(Working Directory) 를 설정한다.
 ```
-**WORKDIR /path/to/workdir**
+WORKDIR /path/to/workdir
 ```
 리눅스의 cd 명령어와 유사하나,
 
 이동하려는 디렉토리가 존재하지 않을 경우 해당 디렉토리를 생성하여 이동한다.
 
 ```
-**WORKDIR /home/toramko**
+WORKDIR /home/toramko
 ``` 
 
 #### 12) VOLUME
@@ -356,7 +356,7 @@ VOLUME 은 컨테이너 내의 특정 디렉토리를 컨테이너 외부 경로
  
 연결된 외부 경로에 데이터가 쌓이면서 영구 보존이 가능해진다.
 ```
-**VOLUME ["/data"]**
+VOLUME ["/data"]
 ```
 생각보다 사용법은 매우 간단하다.
 
@@ -366,7 +366,7 @@ host 의 어떤 폴더에 마운트할지 정할 수는 없어 보임!
 
  
 ```
-**/var/lib/docker/volumes/{volume명}**
+/var/lib/docker/volumes/{volume명}
 ```
 위 경로에 기본적으로 마운트된다고 한다.
  
