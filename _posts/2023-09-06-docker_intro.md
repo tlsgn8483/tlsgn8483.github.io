@@ -37,7 +37,7 @@ CMD python /app/app.py
 
 ### 도커파일 Instructions 종류(타입)
 
-1) FROM
+#### 1) FROM
 
 
 도커파일에서 FROM 은 베이스 이미지(Base image)를 지정하는 지시어다.
@@ -57,7 +57,7 @@ FROM 에서 베이스 이미지와 태그를 지정하면 registry 에서 해당
 새로 만들 이미지의 기초가 되도록 구성한다.
 
 
-2) RUN
+#### 2) RUN
 
  
 
@@ -93,7 +93,7 @@ shell form 이 우리가 직접 터미널에 입력하는 명령어의 형태와
 exec form 은 명령어 내의 각 단어를 따옴표와 bracket 으로 감싸주어야 해서 살짝 번거롭다.
 (하지만 exec form 이 명령어 인식이 조금 더 잘된다는 얘기를 들은 것 같기도..)
 
-3) CMD
+#### 3) CMD
 
 CMD 는 컨테이너가 시작될 때 실행할 커맨드를 지정하는 지시어이다.
 
@@ -129,7 +129,7 @@ CMD echo $HOME
 
 (다음에 이어질 ENTRYPOINT 에서도 동일하다)
 
-4) ENTRYPOINT
+#### 4) ENTRYPOINT
 
  
 
@@ -194,7 +194,7 @@ default 값을 갖는 param 역할을 하는 경우가 많다.
  
 
 
-5) LABEL
+#### 5) LABEL
 
 key-value 형식으로 작성된 메타데이터를 이미지에 추가한다.
 
@@ -216,7 +216,7 @@ multiple lines."
 
  
 
-6) ENV
+#### 6) ENV
 
  
 
@@ -243,7 +243,7 @@ ENV NAME="Toram" ANIMAL_TYPE=Rabbit\ And\ Squirrel \
 
  
 
-7) EXPOSE
+#### 7) EXPOSE
 
  
 
@@ -261,7 +261,7 @@ UDP 프로토콜의 80 포트는 위와 같이 작성할 수 있다.
  
  
 
-8) COPY
+#### 8) COPY
 
 Host 내에 있는 파일 또는 디렉토리를 컨테이너의 파일시스템으로 복사.
 
@@ -278,7 +278,7 @@ COPY --chown=toram:toram *.txt /toramko/
 
  
 
-9) ADD
+#### 9) ADD
 
  
 
@@ -298,7 +298,7 @@ ADD 는 Host 내에 있는 파일 외에도
 
  
 
-10) USER
+#### 10) USER
 
 
 컨테이너 안에서 명령을 실행할 유저명, 유저그룹을 설정한다.
@@ -322,7 +322,7 @@ USER <UID>[:<GID>]
 
  
 
-11) WORKDIR
+#### 11) WORKDIR
 
 
 작업 디렉토리(Working Directory) 를 설정한다.
@@ -337,7 +337,7 @@ USER <UID>[:<GID>]
 **WORKDIR /home/toramko**
  
 
-12) VOLUME
+#### 12) VOLUME
 
  
 VOLUME 은 컨테이너 내의 특정 디렉토리를 컨테이너 외부 경로에 마운트(mount) 시켜주는 지시자이다.
