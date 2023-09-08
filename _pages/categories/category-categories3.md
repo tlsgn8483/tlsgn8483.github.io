@@ -1,9 +1,9 @@
 ---
 title: "Flask Framework"
 layout: category
-permalink: /categories/categories3/
+permalink: /categories/Flask/
 author_profile: true
-taxonomy: Categories3
+taxonomy: Flask
 sidebar:
   nav: "categories"
 ---
