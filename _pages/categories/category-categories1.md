@@ -1,9 +1,9 @@
 ---
 title: "Diary"
 layout: category
-permalink: /categories/categories1/
+permalink: /categories/Diary/
 author_profile: true
-taxonomy: Categories1
+taxonomy: Diary
 sidebar:
-  nav: "Diary"
+  nav: "categories"
 ---
