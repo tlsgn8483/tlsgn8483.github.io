@@ -26,10 +26,12 @@ last_modified_at: 2023-09-06
 
 ### 도커파일 예시
 
+```
 FROM ubuntu:18.04
 COPY . /app
 RUN make /app
 CMD python /app/app.py
+```
 
 도커파일은 위와 같이 명령어들이 나열된 형태로 작성한다.
 
