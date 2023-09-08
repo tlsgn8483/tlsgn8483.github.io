@@ -3,11 +3,11 @@ title: "[Algorithm] 정렬 알고리즘 정리"
 excerpt: "정렬 알고리즘 정리"
 
 categories:
-  - Categories2
+  - Algorithm
 tags:
   - [tag1, tag2]
 
-permalink: /categories2/Sorting_Algorithm/
+permalink: /Algorithm/Sorting_Algorithm/
 
 toc: true
 toc_sticky: true
