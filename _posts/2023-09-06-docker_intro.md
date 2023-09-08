@@ -21,7 +21,9 @@ last_modified_at: 2023-09-06
 > 도커파일은 docker 에서 이미지를 생성하기 위한 용도로 작성하는 파일이다. 만들 이미지에 대한 정보를 기술해 둔 템플릿(template) 이라고 보면 된다.
 
 도커 이미지를 만들 때 
-**docker build [옵션] [작성한 dockerfile 경로]** 
+```
+**docker build [옵션] [작성한 dockerfile 경로]**
+```
 위와 같이 명령어를 입력하면 작성한 도커파일의 내용을 기반으로 이미지 빌드가 시작된다.
 
 ### 도커파일 예시
@@ -74,22 +76,22 @@ RUN 은 말 그대로 command 를 실행(run)하여 새 이미지에 포함시�
 RUN 뒤에 소프트웨어/라이브러리 설치 명령어, 또는 파일/디렉토리 생성 명령어를 작성하는 것이다.
 
 이렇게 하면 명령어가 실행된 후의 변경사항이 새 이미지에 반영된다.
-
+```
 #shell form
 RUN <command>
 
 #exec form
 RUN ["<executable>", "<param 1>", "<param 2>"]
-
+```
 command 는 보통 위와 같이 shell form, exec form 의 형태로 작성이 가능하다.
 
-
+```
 #shell form
 RUN /bin/bash -c 'echo hello'
 
 #exec form
 RUN ["/bin/bash", "-c", "echo hello"]
-
+```
 
 shell form 이 우리가 직접 터미널에 입력하는 명령어의 형태와 비슷하다.
 exec form 은 명령어 내의 각 단어를 따옴표와 bracket 으로 감싸주어야 해서 살짝 번거롭다.
@@ -98,22 +100,22 @@ exec form 은 명령어 내의 각 단어를 따옴표와 bracket 으로 감싸�
 #### 3) CMD
 
 CMD 는 컨테이너가 시작될 때 실행할 커맨드를 지정하는 지시어이다.
-
+```
 #shell form
 CMD <command>
 
 #exec form
 CMD ["<executable", "<param>"]
-
+```
 CMD 도 커맨드를 shell 형태 또는 exec 형태로 작성할 수 있다.
 
 언뜻 보면 RUN 과 똑같아 보이지만
 RUN 은 이미지를 빌드할 때 실행되는 것이고
 CMD 는 이미 만들어진(빌드 완료된) 이미지로부터 도커 컨테이너를 시작할 때 실행되는 것이다.
-
+```
 FROM ubuntu
 CMD ["/usr/bin/wc","--help"]
-
+```
 이렇게 컨테이너가 올라올 때 실행되어야 할 명령어를 위와 같이 작성하면 된다.
 
 
@@ -138,13 +140,13 @@ CMD echo $HOME
 ENTRYPOINT 역시 컨테이너 시작 시 실행될 command 를 지정한다.
 
 그리고 마찬가지로 shell, exec 형태의 command 가 가능하다.
-
+```
 # shell form
 ENTRYPOINT command param1 param2
 
 # exec form
 ENTRYPOINT ["executable", "param1", "param2"]
- 
+```
 
 CMD 와 거의 동일하지만
 
@@ -153,27 +155,27 @@ CMD 와 거의 동일하지만
  
 
 다음과 같이 도커파일이 작성되었다고 가정해보자.
-
+```
 FROM ubuntu
 ENTRYPOINT ["/bin/echo", "Hello"]
 CMD ["world"]
 CMD 가 ENTRYPOINT 의 additional param 이 되는 형태이다.
-
+```
  
 
 컨테이너를 실행할 때 param 지정 없이 일반적으로 실행할 경우 그 결과는 다음과 같다.
-
+```
 $ docker run -it --rm --name test
 
 Hello world
- 
+```
 
 만약 컨테이너를 실행할 때 param 을 지정하는 경우('toramko')는
-
+```
 $ docker run -it --rm --name test toramko
 
 Hello toramko
- 
+```
 
 위와 같이 나오게 된다.
 
@@ -199,22 +201,24 @@ default 값을 갖는 param 역할을 하는 경우가 많다.
 #### 5) LABEL
 
 key-value 형식으로 작성된 메타데이터를 이미지에 추가한다.
-
+```
 LABEL <key>=<value> <key>=<value> <key>=<value> ...
+```
 위와 같이 key-value pair 를 작성하면 된다.
 
  
-
+```
 LABEL "toramkey"="toramval"
 LABEL version="1.0"
 LABEL description="label's values can span \
 multiple lines."
+```
 도커파일에 위와 같이 지정해두고 이미지를 생성한 뒤,
 
 이미지 내에 있는 label 데이터를 확인할 때는 다음과 같이 명령어를 입력한다.
-
+```
  **$ docker image inspect --format='' myimage**
- 
+```
 
  
 
@@ -225,9 +229,9 @@ multiple lines."
 ENV 는 환경변수(Environment Variables) 를 설정하는 지시어이다.
 
 key-value 형식으로 환경변수명과 그 값을 지정한다.
-
+```
 ENV <key>=<value> <key>=<value> <key>=<value> ...
- 
+```
 
 LABEL 과 사용법이 같다.
 
@@ -238,11 +242,10 @@ LABEL 과 사용법이 같다.
 환경변수 값에 " (따옴표) 와 같은 인용문자를 넣으려면 \ (백슬래시) 를 붙여주어야 한다. (escape 처리)
 
  
-
+```
 ENV NAME="Toram" ANIMAL_TYPE=Rabbit\ And\ Squirrel \
     AGE=2
- 
-
+```
  
 
 #### 7) EXPOSE
@@ -256,8 +259,9 @@ EXPOSE 지시어는 컨테이너가 실행될 때 컨테이너로 들어오는 �
 
 EXPOSE <포트>/<프로토콜>
 위와 같은 형식이며, 프로토콜을 따로 지정하지 않는 경우 기본적으로 TCP 로 인식된다.
-
+```
 EXPOSE 80/udp
+```
 UDP 프로토콜의 80 포트는 위와 같이 작성할 수 있다.
 
  
@@ -268,15 +272,13 @@ UDP 프로토콜의 80 포트는 위와 같이 작성할 수 있다.
 Host 내에 있는 파일 또는 디렉토리를 컨테이너의 파일시스템으로 복사.
 
 다음과 같은 형식으로 <src> 에서 <dest> 로 파일/디렉토리를 복사한다.
-
+```
 COPY [--chown=<user>:<group>] <src>... <dest>
 COPY [--chown=<user>:<group>] ["<src>",... "<dest>"]
 --chown 옵션으로 파일과 디렉토리에 대한 소유 권한을 지정할 수 있다.
-
  
-
 COPY --chown=toram:toram *.txt /toramko/
- 
+```
 
  
 
@@ -285,18 +287,19 @@ COPY --chown=toram:toram *.txt /toramko/
  
 
 ADD 역시 파일 또는 디렉토리를 컨테이너로 복사한다.
-
+```
 ADD [--chown=<user>:<group>] <src>... <dest>
 ADD [--chown=<user>:<group>] ["<src>",... "<dest>"]
+```
 COPY 와 거의 동일하나,
 ADD 는 Host 내에 있는 파일 외에도
 
 경로(URL)를 지정하여 remote 파일/디렉토리를 복사해올 수 있다는 점이 다르다.
 
  
-
+```
 **ADD http://example.com/foobar /toramko/**
- 
+```
 
  
 
@@ -306,10 +309,10 @@ ADD 는 Host 내에 있는 파일 외에도
 컨테이너 안에서 명령을 실행할 유저명, 유저그룹을 설정한다.
 
 기본적으로 컨테이너는 root 계정으로 실행되는데 이를 사용자계정 등으로 변경하기 위함이다.
-
+```
 USER <user>[:<group>]
 USER <UID>[:<GID>]
-
+```
 위와 같이 user 명, group 명으로 지정할 수도 있고 uid, gid 로 지정할 수도 있다.
 
  
@@ -319,25 +322,25 @@ USER <UID>[:<GID>]
 그 이후의 명령들(RUN, CMD, ENTRYPOINT, COPY 등)에 적용된다.
 
  
-
+```
 **toram:toram**
-
+```
  
 
 #### 11) WORKDIR
 
 
 작업 디렉토리(Working Directory) 를 설정한다.
-
+```
 **WORKDIR /path/to/workdir**
-
+```
 리눅스의 cd 명령어와 유사하나,
 
 이동하려는 디렉토리가 존재하지 않을 경우 해당 디렉토리를 생성하여 이동한다.
 
-
+```
 **WORKDIR /home/toramko**
- 
+``` 
 
 #### 12) VOLUME
 
@@ -352,9 +355,9 @@ VOLUME 은 컨테이너 내의 특정 디렉토리를 컨테이너 외부 경로
 
  
 연결된 외부 경로에 데이터가 쌓이면서 영구 보존이 가능해진다.
-
+```
 **VOLUME ["/data"]**
-
+```
 생각보다 사용법은 매우 간단하다.
 
 VOLUME 지시자는 컨테이너 내의 디렉토리만 지정하면 된다.
@@ -362,9 +365,9 @@ VOLUME 지시자는 컨테이너 내의 디렉토리만 지정하면 된다.
 host 의 어떤 폴더에 마운트할지 정할 수는 없어 보임!
 
  
-
+```
 **/var/lib/docker/volumes/{volume명}**
-
+```
 위 경로에 기본적으로 마운트된다고 한다.
  
 
