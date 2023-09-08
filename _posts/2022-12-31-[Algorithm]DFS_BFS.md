@@ -3,11 +3,11 @@ title: "[Algorithm] DFS와 BFS의 차이"
 excerpt: "DFS와 BFS의 로직정리"
 
 categories:
-  - Categories2
+  - Algorithm
 tags:
   - [tag1, tag2]
 
-permalink: /categories2/DFS_BFS/
+permalink: /Algorithm/DFS_BFS/
 
 toc: true
 toc_sticky: true
