@@ -38,11 +38,12 @@ app.py 파일 상수설정
 host_addr = "0.0.0.0"
 port_num = "5300"
 app = Flask(__name__)
+```
+
+POST로 요청을때 작동하도록 API 동작
+각각의 json 파일로 DB 계정접속정보 쿼리문, 스케줄러 동작여부 등 만들어두었다.  
 
 ```
-# POST로 요청을때 작동하도록 API 동작
-# 각각의 json 파일로 DB 계정접속정보 쿼리문, 스케줄러 동작여부 등 만들어두었다.  
-
 @app.route("/api/oracle_vital_signals", methods=['POST'])
 def oracle_vital_signals():
 # 파라미터 데이터는 json 형식의 데이터로 받는다. 
@@ -82,8 +83,9 @@ def oracle_vital_signals():
     finally:
         db_oracle.dbOracle.dbClose(api_obj.db_oracle)
 ```
+
 ```
-# 중요한 배포
+중요한 배포
 FROM python:3.8
 # 모든 소스는 app 폴더에 복사해주고, 
 COPY . /app
