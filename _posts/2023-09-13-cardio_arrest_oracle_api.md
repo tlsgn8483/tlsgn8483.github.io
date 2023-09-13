@@ -1,5 +1,5 @@
 ---
-title: "[Flask] Cardio_arrest_Test_API"
+title: "[Flask] Cardio_arrest_test_API"
 excerpt: "심정지예측 AI 인터페이스 REST API 툴제작"
 
 categories:
@@ -7,7 +7,7 @@ categories:
 tags:
   - [tag1, tag2]
 
-permalink: /Flask/Cardio_arrest_Test_API/
+permalink: /Flask/Cardio_arrest_test_API/
 
 toc: true
 toc_sticky: true
