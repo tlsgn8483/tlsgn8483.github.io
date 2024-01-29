@@ -38,4 +38,6 @@ categories:
     url: /categories/operating_system/
   - title: "Database"
     url: /categories/Database/
+  - title: "Redis"
+    url: /categories/Redis/
     
