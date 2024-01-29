@@ -1,5 +1,5 @@
 ---
-title: "운영체제"
+title: "Redis"
 layout: category
 permalink: /categories/Redis/
 author_profile: true
