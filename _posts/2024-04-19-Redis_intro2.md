@@ -169,6 +169,5 @@ Stale Cache Invalidation
 - Two Hard Things : “There are only two hard things in Computer Science: cache invalidation and naming things”
 
 <img width="747" alt="스크린샷 2024-04-19 오후 2 58 22" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/7eaa3f50-e78d-4c52-ab07-2de512de57ba">
-
  
 참조 : [Redis]([https://inf.run/BQH4z])
