@@ -71,16 +71,18 @@ AOF(Append Only File)
 > Redis 설치 / 실행
 
 Redis 설치
-MacOS https://redis.io/docs/getting-started/installation/install-redis-on-mac-os/ 
+- MacOS : https://redis.io/docs/getting-started/installation/install-redis-on-mac-os/ 
 
-Windows https://redis.io/docs/getting-started/installation/install-redis-on-windows/
+- Windows : https://redis.io/docs/getting-started/installation/install-redis-on-windows/
 
 Redis 실행
+
 ```
 $ redis-cli
 $ ping
 ```
 데이터 저장/조회/삭제
+
 ```
 저장
  $ SET lecture inflearn-redis
@@ -92,6 +94,7 @@ $ ping
 
 > 데이터 타입 알아보기
 - Strings 문자열, 숫자, serialized object(JSON string) 등 저장 명령어
+
 ```
 $ SET lecture inflearn-redis
 $ MSET price 100 language ko $ MGET lecture price language
@@ -118,6 +121,7 @@ Sets
 
 Sets Unique string을 저장하는 정렬되지 않은 집합
 Set Operation 사용 가능(e.g. intersection, union, difference)
+
 ```
 명령어 
 $ SADD user:1:fruits apple banana orange orange $ SMEMBERS user:1:fruits
