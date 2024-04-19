@@ -116,10 +116,12 @@ Sliding Window Rate Limiter
 
 Geofencing
 - Geofencing : 위치를 활용하여 지도 상의 가상의 경계 또는 지리적 영역을 정의하는 기술
+  
 ```
 명령어
 $ GEOADD gang-nam:burgers 127.025705 37.501272 five-guys 127.025699 37.502775 shake-shack 127.028747 37.498668 mc-donalds 127.027531 37.498847 burger-king
 $ GEORADIUS gang-nam:burgers 127.027583 37.497928 0.5 km
+```
 
 <img width="394" alt="스크린샷 2024-04-19 오후 2 52 20" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/60013210-dae7-41f3-9661-bdfdaf564c6a">
 
