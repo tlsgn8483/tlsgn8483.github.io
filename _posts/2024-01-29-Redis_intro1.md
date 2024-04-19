@@ -99,7 +99,9 @@ $ INCR price
 $ INCRBY price 10
 $ SET ‘{“lecture”: “inflearn-redis”, “language”: “en”}’ $ SET inflearn-redis:ko:price 200
 ```
+
 Lists
+
 <img width="581" alt="스크린샷 2024-04-19 오후 2 16 15" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/bf74b176-14c1-416f-b840-229289a9620b">
 
 Lists String을 Linked List로 저장 -> push / pop에 최적화 O(1) Queue(FIFO) / Stack(FILO) 구현에 사용
