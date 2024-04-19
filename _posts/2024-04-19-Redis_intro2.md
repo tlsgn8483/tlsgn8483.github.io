@@ -1,5 +1,5 @@
 ---
-title: "[Redis] Redis 활용방법"
+title: "[Redis] Redis 특수명령어"
 excerpt: "Redis 특수명령어"
 
 categories:
