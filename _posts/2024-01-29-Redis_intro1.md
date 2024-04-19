@@ -93,6 +93,7 @@ $ ping
 ```
 
 > 데이터 타입 알아보기
+
 - Strings 문자열, 숫자, serialized object(JSON string) 등 저장 명령어
 
 ```
