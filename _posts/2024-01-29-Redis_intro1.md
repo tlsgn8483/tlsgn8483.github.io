@@ -231,4 +231,4 @@ $ BF.EXISTS fruits apple
 $ BF.EXISTS fruits grape
 ```
  
-참조 : [Redis]([https://inf.run/BQH4z])
+참조 : [Redis]([https://www.inflearn.com/course/%EC%8B%A4%EC%A0%84-redis-%ED%99%9C%EC%9A%A9?inst=324c9cb6&utm_source=instructor&utm_medium=referral&utm_campaign=inflearn_%ED%8A%B8%EB%9E%98%ED%94%BD_promotion-link])
