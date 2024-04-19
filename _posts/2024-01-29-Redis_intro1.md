@@ -76,18 +76,19 @@ MacOS https://redis.io/docs/getting-started/installation/install-redis-on-mac-os
 Windows https://redis.io/docs/getting-started/installation/install-redis-on-windows/
 
 Redis 실행
-
+```
 $ redis-cli
 $ ping
-
+```
 데이터 저장/조회/삭제
+```
 저장
  $ SET lecture inflearn-redis
 조회
  $ GET lecture
 삭제
  $ DEL lecture
-
+```
 
 > 데이터 타입 알아보기
 - Strings 문자열, 숫자, serialized object(JSON string) 등 저장 명령어
