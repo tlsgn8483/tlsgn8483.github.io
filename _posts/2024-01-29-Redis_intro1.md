@@ -124,7 +124,8 @@ Hashes field-value 구조를 갖는 데이터 타입
 다양한 속성을 갖는 객체의 데이터를 저장할 때 유용
 
 명령어 
-$ HSET lecture name inflearn-redis price 100 language ko $ HGET lecture name
+$ HSET lecture name inflearn-redis price 100 language ko 
+$ HGET lecture name
 $ HMGET lecture price language invalid $ HINCRBY lecture price 10
 
 Sorted Sets
@@ -169,6 +170,7 @@ $ GETBIT result 123
 
 HyperLogLog
 <img width="464" alt="스크린샷 2024-04-19 오후 2 22 29" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/995bba41-f0ce-49b7-93db-f2c179c3178e">
+
 HyperLogLog 집합의 cardinality를 추정할 수 있는 확률형 자료구조
 정확성을 일부 포기하는 대신 저장공간을 효율적으로 사용(평균 에러 0.81%)
 Vs. SET 실제 값을 저장하지 않기 때문에 매우 적은 메모리 사용
@@ -179,6 +181,7 @@ $ PFCOUNT fruits
 
 BloomFilter
 <img width="489" alt="스크린샷 2024-04-19 오후 2 23 59" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/940c1ba1-753f-446d-ba54-161b354c87a5">
+
 BloomFilter element가 집합 안에 포함되었는지 확인할 수 있는 확률형 자료 구조 (=membership test)
 정확성을 일부 포기하는 대신 저장공간을 효율적으로 사용
 false positive element가 집합에 실제로 포함되지 않은데 포함되었다고 잘못 예측하는 경우
