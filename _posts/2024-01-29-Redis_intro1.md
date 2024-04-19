@@ -92,28 +92,30 @@ $ ping
 
 > 데이터 타입 알아보기
 - Strings 문자열, 숫자, serialized object(JSON string) 등 저장 명령어
-  
+```
 $ SET lecture inflearn-redis
 $ MSET price 100 language ko $ MGET lecture price language
 $ INCR price
 $ INCRBY price 10
 $ SET ‘{“lecture”: “inflearn-redis”, “language”: “en”}’ $ SET inflearn-redis:ko:price 200
-
+```
 Lists
 <img width="581" alt="스크린샷 2024-04-19 오후 2 16 15" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/bf74b176-14c1-416f-b840-229289a9620b">
 
 Lists String을 Linked List로 저장 -> push / pop에 최적화 O(1) Queue(FIFO) / Stack(FILO) 구현에 사용
+```
 $ LPUSH queue job1 job2 job3 $ RPOP queue
 $ LPUSH stack job1 job2 job3 $ LPOP stack
 $ LPUSH queue job1 job2 job3 $ LRANGE queue -2 -1
 $ LTRIM queue 0 0
+```
 
 Sets
 <img width="497" alt="스크린샷 2024-04-19 오후 2 17 22" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/4da7f785-d2ab-4e3c-a83b-71bc4e74791c">
 
 Sets Unique string을 저장하는 정렬되지 않은 집합
 Set Operation 사용 가능(e.g. intersection, union, difference)
-
+```
 명령어 
 $ SADD user:1:fruits apple banana orange orange $ SMEMBERS user:1:fruits
 $ SCARD user:1:fruits
@@ -121,17 +123,19 @@ $ SISMEMBER user:1:fruits banana
 $ SADD user:2:fruits apple lemon
 $ SINTER user:1:fruits user:2:fruits $ SDIFF user:1:fruits user:2:fruits
 $ SUNION user:1:fruits user:2:fruits
+```
 
 Hashes
-
 Hashes field-value 구조를 갖는 데이터 타입
 다양한 속성을 갖는 객체의 데이터를 저장할 때 유용
 
+```
 명령어 
 $ HSET lecture name inflearn-redis price 100 language ko 
 $ HGET lecture name
 $ HMGET lecture price language invalid 
 $ HINCRBY lecture price 10
+```
 
 Sorted Sets
 <img width="482" alt="스크린샷 2024-04-19 오후 2 19 04" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/71ebc6e7-6430-4183-b43b-daa4b47a8a9c">
@@ -139,11 +143,13 @@ Sorted Sets
 ZSets Unique string을 연관된 score를 통해 정렬된 집합(Set의 기능 + 추가로 score 속성 저장) 내부적으로 Skip List + Hash Table로 이루어져 있고, score 값에 따라 정렬 유지
 score가 동일하면 lexicographically(사전 편찬 순) 정렬
 
+```
 명령어 
 $ ZADD points 10 TeamA 10 TeamB 50 TeamC 
 $ ZRANGE points 0 -1
 $ ZRANGE points 0 -1 REV WITHSCORES 
 $ ZRANK points TeamA
+```
 
 Streams
 append-only log에 consumer groups과 같은 기능을 더한 자료 구조
@@ -152,30 +158,36 @@ append-only log에 consumer groups과 같은 기능을 더한 자료 구조
 unique id를 통해 하나의 entry를 읽을 때, O(1) 시간 복잡도
 Consumer Group을 통해 분산 시스템에서 다수의 consumer가 event 처리 $ XADD events * action like user_id 1 product_id 1
 
+```
 명령어
 $ XADD events * action like user_id 1 product_id 1
 $ XADD events * action like user_id 2 product_id 1 $ XRANGE events - +
 $ XDEL events ID
+```
 
 Geospatials
 <img width="495" alt="스크린샷 2024-04-19 오후 2 26 28" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/895a2b97-3744-436c-a7a2-b2692051e9bd">
 
 Geospatial Indexes 좌표를 저장하고, 검색하는 데이터 타입 거리 계산, 범위 탐색 등 지원
 
+```
 명령어
 $ GEOADD seoul:station
 126.923917 37.556944 hong-dae 127.027583 37.497928 gang-nam
 $ GEODIST seoul:station hong-dae gang-nam KM
+```
 
 Bitmaps
 Bitmaps 실제 데이터 타입은 아니고, String에 binary operation을 적용한 것 최대 42억개 binary 데이터 표현 = 2^32(4,294,967,296)
 
+```
 명령어 
 $ SETBIT user:log-in:23-01-01 123 1 $ SETBIT user:log-in:23-01-01 456 1 $ SETBIT user:log-in:23-01-02 123 1
 $ BITCOUNT user:log-in:23-01-01
 $ BITOP AND result
 user:log-in:23-01-01 user:log-in:23-01-02
 $ GETBIT result 123
+```
 
 HyperLogLog
 <img width="464" alt="스크린샷 2024-04-19 오후 2 22 29" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/995bba41-f0ce-49b7-93db-f2c179c3178e">
@@ -184,9 +196,11 @@ HyperLogLog 집합의 cardinality를 추정할 수 있는 확률형 자료구조
 정확성을 일부 포기하는 대신 저장공간을 효율적으로 사용(평균 에러 0.81%)
 Vs. SET 실제 값을 저장하지 않기 때문에 매우 적은 메모리 사용
 
+```
 명령어
 $ PFADD fruits apple orange grape kiwi 
 $ PFCOUNT fruits
+```
 
 BloomFilter
 <img width="489" alt="스크린샷 2024-04-19 오후 2 23 59" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/940c1ba1-753f-446d-ba54-161b354c87a5">
@@ -196,9 +210,11 @@ BloomFilter element가 집합 안에 포함되었는지 확인할 수 있는 확
 false positive element가 집합에 실제로 포함되지 않은데 포함되었다고 잘못 예측하는 경우
 vs. Set 실제 값을 저장하지 않기 때문에 매우 적은 메모리 사용
 
+```
 명령어
 $ BF.MADD fruits apple orange 
 $ BF.EXISTS fruits apple
 $ BF.EXISTS fruits grape
+```
  
 참조 : [Redis]([https://inf.run/BQH4z])
