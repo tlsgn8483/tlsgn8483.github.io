@@ -156,6 +156,9 @@ $ ZRANK points TeamA
 ```
 
 Streams
+
+<img width="573" alt="image" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/1398800d-5cda-4243-8bcb-8d86621a0cb7">
+
 append-only log에 consumer groups과 같은 기능을 더한 자료 구조
 
 추가기능
@@ -184,6 +187,9 @@ $ GEODIST seoul:station hong-dae gang-nam KM
 ```
 
 Bitmaps
+
+<img width="357" alt="스크린샷 2024-04-19 오후 2 34 03" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/39530acd-6cc0-417e-9cd5-2fce5aa0db5e">
+
 Bitmaps 실제 데이터 타입은 아니고, String에 binary operation을 적용한 것 최대 42억개 binary 데이터 표현 = 2^32(4,294,967,296)
 
 ```
