@@ -72,9 +72,11 @@ AOF(Append Only File)
 
 Redis 설치
 MacOS https://redis.io/docs/getting-started/installation/install-redis-on-mac-os/ 
+
 Windows https://redis.io/docs/getting-started/installation/install-redis-on-windows/
 
 Redis 실행
+
 $ redis-cli
 $ ping
 
@@ -107,6 +109,7 @@ $ LTRIM queue 0 0
 
 Sets
 <img width="497" alt="스크린샷 2024-04-19 오후 2 17 22" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/4da7f785-d2ab-4e3c-a83b-71bc4e74791c">
+
 Sets Unique string을 저장하는 정렬되지 않은 집합
 Set Operation 사용 가능(e.g. intersection, union, difference)
 
@@ -126,7 +129,8 @@ Hashes field-value 구조를 갖는 데이터 타입
 명령어 
 $ HSET lecture name inflearn-redis price 100 language ko 
 $ HGET lecture name
-$ HMGET lecture price language invalid $ HINCRBY lecture price 10
+$ HMGET lecture price language invalid 
+$ HINCRBY lecture price 10
 
 Sorted Sets
 <img width="482" alt="스크린샷 2024-04-19 오후 2 19 04" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/71ebc6e7-6430-4183-b43b-daa4b47a8a9c">
@@ -135,8 +139,10 @@ ZSets Unique string을 연관된 score를 통해 정렬된 집합(Set의 기능 
 score가 동일하면 lexicographically(사전 편찬 순) 정렬
 
 명령어 
-$ ZADD points 10 TeamA 10 TeamB 50 TeamC $ ZRANGE points 0 -1
-$ ZRANGE points 0 -1 REV WITHSCORES $ ZRANK points TeamA
+$ ZADD points 10 TeamA 10 TeamB 50 TeamC 
+$ ZRANGE points 0 -1
+$ ZRANGE points 0 -1 REV WITHSCORES 
+$ ZRANK points TeamA
 
 Streams
 append-only log에 consumer groups과 같은 기능을 더한 자료 구조
@@ -151,6 +157,8 @@ $ XADD events * action like user_id 2 product_id 1 $ XRANGE events - +
 $ XDEL events ID
 
 Geospatials
+<img width="495" alt="스크린샷 2024-04-19 오후 2 26 28" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/895a2b97-3744-436c-a7a2-b2692051e9bd">
+
 Geospatial Indexes 좌표를 저장하고, 검색하는 데이터 타입 거리 계산, 범위 탐색 등 지원
 
 명령어
