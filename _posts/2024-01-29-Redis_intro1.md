@@ -40,92 +40,153 @@ Redis 사용사례
 - 실시간 채팅 : PUB/SUB 패턴
 
 
-```
-sudo docker exec -it keygen-db bash
-```
+Redis 알아보기
+Persistence(영속성)
+- Redis는 주로 캐시로 사용되지만 데이터 영속성을 위한 옵션 제공 SSD와 같은 영구적인 저장 장치에 데이터 저장
 
-psql 명령어와 함께 손에 익은 옵션을 기계적으로 붙이는중
-```
-psql -U postgres
-```
+RDB(Redis Database)
+- Point-in-time Snapshot -> 재난 복구(Disaster Recovery) 또는 복제에 주로 사용 일부 데이터 유실의 위험이 있고, 스냅샷 생성 중 클라이언트 요청 지연 발생
 
-## PSQL
-기본적으로 psql 명령어는 옵션을 주지 않고 실행 하면 기본값인 root 사용자로 접속을 시도한다. 
-또한, 서버 호스트는 기본 로컬 소켓, 포트는 기본 5432 등등 여러가지가 자동으로 설정된다.
+AOF(Append Only File)
+- Redis에 적용되는 Write 작업을 모두 log로 저장
+- 데이터 유실의 위험이 적지만, 재난 복구시 Write 작업을 다시 적용하기 때문에 RDB 보다 느림
+(RDB + AOF 함께 사용하는 옵션 제공)
 
-그렇기 때문에 설정이 바뀌어야 할 경우에는 적절 한 값으로 옵션을 직접 부여해서 접속 해 주어야 한다.
+캐싱(Caching)
+- 데이터를 빠르게 읽고 처리하기 위해 임시로 저장하는 기술
+- 계산된 값을 임시로 저장해두고, 동일한 계산 / 요청 발생시 다시 계산하지 않고 저장된 값 바로 사용
+- 캐시(Cache) = 임시 저장소
 
-root로 시도중
+사용 사례
+- CPU 캐시 CPU와 RAM의 속도 차이로 발생하는 지연을 줄이기 위해 L1, L2, L3 캐시 사용
+- 웹 브라우저 캐싱웹 브라우저가 웹 페이지 데이터를 로컬 저장소에 저장하여 해당 페이지 재방문시 사용
+- DNS 캐싱 이전에 조회한 도메인 이름과 해당하는 IP 주소를 저장하여 재요청시 사용
+- 데이터베이스 캐싱 데이터베이스 조회나 계산 결과를 저장하여 재요청시 사용, CDN 원본 서버의 컨텐츠를 PoP 서버에 저장하여 사용자와 가까운 서버에서 요청처리
+- 어플리케이션 캐싱 어플리케이션에서 데이터나 계산 결과를 캐싱하여 반복적 작업
 
-PSQL의 기본 사용법은 psql [OPTION]... [DBNAME [USERNAME]] 이며 다양한 옵션을 아래의 명령어로 손 쉽게 확인 할 수 있다.
+<img width="1111" alt="스크린샷 2024-04-19 오후 2 11 06" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/397bc1bb-49d0-44ef-b99f-d6dd76e2f224">
 
-```
-bash
-psql --help
-```
-옵션 목록은 아래와 같다.
+<img width="1076" alt="스크린샷 2024-04-19 오후 2 12 09" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/4790d3bd-40c8-4c8e-a9bc-c9efe68798b0">
 
-### 일반 옵션
-```
--c, --command=COMMAND 하나의 명령(SQL 또는 내부 명령)만 실행하고 끝냄
--d, --dbname=DBNAME 연결할 데이터베이스 이름(기본 값: "root")
--f, --file=FILENAME 파일 안에 지정한 명령을 실행하고 끝냄
--l, --list 사용 가능한 데이터베이스 목록을 표시하고 끝냄
--v, --set=, --variable=NAME=VALUE psql 변수 NAME을 VALUE로 설정 (예, -v ON_ERROR_STOP=1)
--V, --version 버전 정보를 보여주고 마침
-```
-### 입출력 옵션
-```
--a, --echo-all 스크립트의 모든 입력 표시
--b, --echo-errors 실패한 명령들 출력
--e, --echo-queries 서버로 보낸 명령 표시
--E, --echo-hidden 내부 명령이 생성하는 쿼리 표시
--L, --log-file=FILENAME 세션 로그를 파일로 보냄
--n, --no-readline 확장된 명령행 편집 기능을 사용중지함(readline)
--o, --output=FILENAME 쿼리 결과를 파일(또는 파이프)로 보냄
--q, --quiet 자동 실행(메시지 없이 쿼리 결과만 표시)
--s, --single-step 단독 순차 모드(각 쿼리 확인)
--S, --single-line 한 줄 모드(줄 끝에서 SQL 명령이 종료됨)
-```
-### 출력 형식 옵션
-```
--A, --no-align 정렬되지 않은 표 형태의 출력 모드
--F, --field-separator=STRING
-```
-**unaligned 출력용 필드 구분자 설정(기본 값: "|")**
-```
--H, --html HTML 표 형태 출력 모드
--P, --pset=VAR[=ARG] 인쇄 옵션 VAR을 ARG로 설정(\pset 명령 참조)
--R, --record-separator=STRING
-```
-**unaligned 출력용 레코드 구분자 설정 (기본 값: 줄바꿈 문자)**
-```
--t, --tuples-only 행만 인쇄
--T, --table-attr=TEXT HTML table 태그 속성 설정(예: width, border)
--x, --expanded 확장된 표 형태로 출력
--z, --field-separator-zero unaligned 출력용 필드 구분자를 0 바이트로 지정
--0, --record-separator-zero unaligned 출력용 레코드 구분자를 0 바이트로 지정
-```
-### 연결 옵션
-```
--h, --host=HOSTNAME 데이터베이스 서버 호스트 또는 소켓 디렉터리 (기본값: "로컬 소켓")
--p, --port=PORT 데이터베이스 서버 포트(기본 값: "5432")
--U, --username=USERNAME 데이터베이스 사용자 이름(기본 값: "root")
--w, --no-password 암호 프롬프트 표시 안 함
--W, --password 암호 입력 프롬프트 보임(자동으로 처리함)
-```
-## 결론
-`psql -U 유저명` 후에 공백을 하나 두고 혹은, `-d나 --dbname` 옵션으로 DB 이름을 지정해주면 원하는 결과를 얻을 수 있다.
+> Redis 설치 / 실행
+
+Redis 설치
+MacOS https://redis.io/docs/getting-started/installation/install-redis-on-mac-os/ 
+Windows https://redis.io/docs/getting-started/installation/install-redis-on-windows/
+
+Redis 실행
+$ redis-cli
+$ ping
+
+데이터 저장/조회/삭제
+저장
+ $ SET lecture inflearn-redis
+조회
+ $ GET lecture
+삭제
+ $ DEL lecture
 
 
-```
-psql -U username databasename
-```
-사실 위의 명령도 풀어 쓰면 아래와 같다.
-```
-psql --dbname=my_db_name --host=localhost --port=5432 --username=my_user_name --no-password
-```
-앞으로는 postgres 접속이 필요 할 때 시간 낭비를 더 이상 하지 않기 위해 정리 해보았다.
+> 데이터 타입 알아보기
+- Strings 문자열, 숫자, serialized object(JSON string) 등 저장 명령어
+  
+$ SET lecture inflearn-redis
+$ MSET price 100 language ko $ MGET lecture price language
+$ INCR price
+$ INCRBY price 10
+$ SET ‘{“lecture”: “inflearn-redis”, “language”: “en”}’ $ SET inflearn-redis:ko:price 200
 
+Lists
+<img width="581" alt="스크린샷 2024-04-19 오후 2 16 15" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/bf74b176-14c1-416f-b840-229289a9620b">
 
-참조 : [qsql]([https://www.postgresql.org/docs/current/app-psql.html])
+Lists String을 Linked List로 저장 -> push / pop에 최적화 O(1) Queue(FIFO) / Stack(FILO) 구현에 사용
+$ LPUSH queue job1 job2 job3 $ RPOP queue
+$ LPUSH stack job1 job2 job3 $ LPOP stack
+$ LPUSH queue job1 job2 job3 $ LRANGE queue -2 -1
+$ LTRIM queue 0 0
+
+Sets
+<img width="497" alt="스크린샷 2024-04-19 오후 2 17 22" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/4da7f785-d2ab-4e3c-a83b-71bc4e74791c">
+Sets Unique string을 저장하는 정렬되지 않은 집합
+Set Operation 사용 가능(e.g. intersection, union, difference)
+
+명령어 
+$ SADD user:1:fruits apple banana orange orange $ SMEMBERS user:1:fruits
+$ SCARD user:1:fruits
+$ SISMEMBER user:1:fruits banana
+$ SADD user:2:fruits apple lemon
+$ SINTER user:1:fruits user:2:fruits $ SDIFF user:1:fruits user:2:fruits
+$ SUNION user:1:fruits user:2:fruits
+
+Hashes
+
+Hashes field-value 구조를 갖는 데이터 타입
+다양한 속성을 갖는 객체의 데이터를 저장할 때 유용
+
+명령어 
+$ HSET lecture name inflearn-redis price 100 language ko $ HGET lecture name
+$ HMGET lecture price language invalid $ HINCRBY lecture price 10
+
+Sorted Sets
+<img width="482" alt="스크린샷 2024-04-19 오후 2 19 04" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/71ebc6e7-6430-4183-b43b-daa4b47a8a9c">
+
+ZSets Unique string을 연관된 score를 통해 정렬된 집합(Set의 기능 + 추가로 score 속성 저장) 내부적으로 Skip List + Hash Table로 이루어져 있고, score 값에 따라 정렬 유지
+score가 동일하면 lexicographically(사전 편찬 순) 정렬
+
+명령어 
+$ ZADD points 10 TeamA 10 TeamB 50 TeamC $ ZRANGE points 0 -1
+$ ZRANGE points 0 -1 REV WITHSCORES $ ZRANK points TeamA
+
+Streams
+append-only log에 consumer groups과 같은 기능을 더한 자료 구조
+
+추가기능
+unique id를 통해 하나의 entry를 읽을 때, O(1) 시간 복잡도
+Consumer Group을 통해 분산 시스템에서 다수의 consumer가 event 처리 $ XADD events * action like user_id 1 product_id 1
+
+명령어
+$ XADD events * action like user_id 1 product_id 1
+$ XADD events * action like user_id 2 product_id 1 $ XRANGE events - +
+$ XDEL events ID
+
+Geospatials
+Geospatial Indexes 좌표를 저장하고, 검색하는 데이터 타입 거리 계산, 범위 탐색 등 지원
+
+명령어
+$ GEOADD seoul:station
+126.923917 37.556944 hong-dae 127.027583 37.497928 gang-nam
+$ GEODIST seoul:station hong-dae gang-nam KM
+
+Bitmaps
+Bitmaps 실제 데이터 타입은 아니고, String에 binary operation을 적용한 것 최대 42억개 binary 데이터 표현 = 2^32(4,294,967,296)
+
+명령어 
+$ SETBIT user:log-in:23-01-01 123 1 $ SETBIT user:log-in:23-01-01 456 1 $ SETBIT user:log-in:23-01-02 123 1
+$ BITCOUNT user:log-in:23-01-01
+$ BITOP AND result
+user:log-in:23-01-01 user:log-in:23-01-02
+$ GETBIT result 123
+
+HyperLogLog
+<img width="464" alt="스크린샷 2024-04-19 오후 2 22 29" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/995bba41-f0ce-49b7-93db-f2c179c3178e">
+HyperLogLog 집합의 cardinality를 추정할 수 있는 확률형 자료구조
+정확성을 일부 포기하는 대신 저장공간을 효율적으로 사용(평균 에러 0.81%)
+Vs. SET 실제 값을 저장하지 않기 때문에 매우 적은 메모리 사용
+
+명령어
+$ PFADD fruits apple orange grape kiwi 
+$ PFCOUNT fruits
+
+BloomFilter
+<img width="489" alt="스크린샷 2024-04-19 오후 2 23 59" src="https://github.com/tlsgn8483/tlsgn8483.github.io/assets/61337570/940c1ba1-753f-446d-ba54-161b354c87a5">
+BloomFilter element가 집합 안에 포함되었는지 확인할 수 있는 확률형 자료 구조 (=membership test)
+정확성을 일부 포기하는 대신 저장공간을 효율적으로 사용
+false positive element가 집합에 실제로 포함되지 않은데 포함되었다고 잘못 예측하는 경우
+vs. Set 실제 값을 저장하지 않기 때문에 매우 적은 메모리 사용
+
+명령어
+$ BF.MADD fruits apple orange 
+$ BF.EXISTS fruits apple
+$ BF.EXISTS fruits grape
+ 
+참조 : [Redis]([https://inf.run/BQH4z])
