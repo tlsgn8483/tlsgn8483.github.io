@@ -16,7 +16,6 @@ date: 2024-01-29
 last_modified_at: 2024-04-19
 ---
 
-## 서론
 > Redis(Remodt Dictionary Server)
 
 특징
