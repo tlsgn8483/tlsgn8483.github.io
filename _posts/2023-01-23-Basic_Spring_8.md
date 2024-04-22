@@ -3,11 +3,11 @@ title: "[Spring Framework] Component Scan"
 excerpt: "Component Scan"
 
 categories:
-  - Categories6
+  - Spring
 tags:
   - [tag1, tag2]
 
-permalink: /categories6/Basic_Spring_8/
+permalink: /Spring/Basic_Spring_8/
 
 toc: true
 toc_sticky: true
