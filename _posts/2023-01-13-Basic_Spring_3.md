@@ -3,11 +3,11 @@ title: "[Spring Framework] 비즈니스 요구사항과 설계1"
 excerpt: "회원, 주문과 할인정첵 설계"
 
 categories:
-  - Categories6
+  - Spring
 tags:
   - [tag1, tag2]
 
-permalink: /categories6/Basic_Spring_3/
+permalink: /Spring/Basic_Spring_3/
 
 toc: true
 toc_sticky: true
