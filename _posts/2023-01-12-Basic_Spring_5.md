@@ -3,11 +3,11 @@ title: "[Spring Framework] 스프링 컨테이너와 스프링 빈"
 excerpt: "스프링 컨테이너와 스프링 빈"
 
 categories:
-  - Categories6
+  - Spring
 tags:
   - [tag1, tag2]
 
-permalink: /categories6/Basic_Spring_6/
+permalink: /Spring/Basic_Spring_6/
 
 toc: true
 toc_sticky: true
