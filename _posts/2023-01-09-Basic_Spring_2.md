@@ -3,11 +3,11 @@ title: "[Spring Framework] 좋은 객체 지향 설계의 5가지 원칙"
 excerpt: "좋은 객체 지향 설계의 5가지 원칙"
 
 categories:
-  - Categories6
+  - Spring
 tags:
   - [tag1, tag2]
 
-permalink: /categories6/Basic_Spring_2/
+permalink: /Spring/Basic_Spring_2/
 
 toc: true
 toc_sticky: true
