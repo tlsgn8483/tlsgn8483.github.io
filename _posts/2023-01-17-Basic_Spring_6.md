@@ -3,11 +3,11 @@ title: "[Spring Framework] BeanFactory와 ApplicationContext"
 excerpt: "BeanFactory와 ApplicationContext"
 
 categories:
-  - Categories6
+  - Spring
 tags:
   - [tag1, tag2]
 
-permalink: /categories6/Basic_Spring_6/
+permalink: /Spring/Basic_Spring_6/
 
 toc: true
 toc_sticky: true
