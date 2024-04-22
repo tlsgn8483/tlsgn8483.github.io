@@ -3,11 +3,11 @@ title: "[Spring Framework] Singleton Pattern & Singleton Container"
 excerpt: "Singleton Pattern & Singleton Container"
 
 categories:
-  - Categories6
+  - Spring
 tags:
   - [tag1, tag2]
 
-permalink: /categories6/Basic_Spring_7/
+permalink: /Spring/Basic_Spring_7/
 
 toc: true
 toc_sticky: true
