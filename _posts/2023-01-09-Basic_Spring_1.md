@@ -3,7 +3,7 @@ title: "[Spring Framework] 스프링 기본정리"
 excerpt: "스프링 기본정리"
 
 categories:
-  - Categories6
+  - Spring
 tags:
   - [tag1, tag2]
 
